@@ -99,6 +99,7 @@
 				EB0A63CE2BA9B09400B575E2 /* Sources */,
 				EB0A63CF2BA9B09400B575E2 /* Frameworks */,
 				EB0A63D02BA9B09400B575E2 /* Resources */,
+				EB0A64042BA9C61700B575E2 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -155,6 +156,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EB0A64042BA9C61700B575E2 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB0A63CE2BA9B09400B575E2 /* Sources */ = {
@@ -313,6 +336,7 @@
 				DEVELOPMENT_TEAM = Q76RZAC2A2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Where To Watch";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
@@ -357,6 +381,7 @@
 				DEVELOPMENT_TEAM = Q76RZAC2A2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Where To Watch";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
