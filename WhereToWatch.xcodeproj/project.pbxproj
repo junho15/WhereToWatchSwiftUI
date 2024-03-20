@@ -13,6 +13,7 @@
 		EB0A63DE2BA9B09500B575E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0A63DD2BA9B09500B575E2 /* Preview Assets.xcassets */; };
 		EB0A63F92BA9C21800B575E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB0A63F72BA9C21800B575E2 /* Localizable.strings */; };
 		EB0A640A2BA9CB6900B575E2 /* MovieDatabaseAPI in Frameworks */ = {isa = PBXBuildFile; productRef = EB0A64092BA9CB6900B575E2 /* MovieDatabaseAPI */; };
+		EB0A640D2BAB026800B575E2 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A640C2BAB026800B575E2 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EB0A63DD2BA9B09500B575E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB0A63F82BA9C21800B575E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB0A63FA2BA9C21F00B575E2 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EB0A640C2BAB026800B575E2 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +89,17 @@
 			children = (
 				EB0A63D52BA9B09400B575E2 /* WhereToWatchApp.swift */,
 				EB0A63D72BA9B09400B575E2 /* ContentView.swift */,
+				EB0A640B2BAB025800B575E2 /* Utilites */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		EB0A640B2BAB025800B575E2 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				EB0A640C2BAB026800B575E2 /* Secrets.swift */,
+			);
+			path = Utilites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0A63D82BA9B09400B575E2 /* ContentView.swift in Sources */,
+				EB0A640D2BAB026800B575E2 /* Secrets.swift in Sources */,
 				EB0A63D62BA9B09400B575E2 /* WhereToWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
