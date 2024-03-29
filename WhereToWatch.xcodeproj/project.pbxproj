@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		EB0A63DA2BA9B09500B575E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0A63D92BA9B09500B575E2 /* Assets.xcassets */; };
 		EB0A63DE2BA9B09500B575E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0A63DD2BA9B09500B575E2 /* Preview Assets.xcassets */; };
 		EB0A63F92BA9C21800B575E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB0A63F72BA9C21800B575E2 /* Localizable.strings */; };
-		EB0A640A2BA9CB6900B575E2 /* MovieDatabaseAPI in Frameworks */ = {isa = PBXBuildFile; productRef = EB0A64092BA9CB6900B575E2 /* MovieDatabaseAPI */; };
 		EB0A640D2BAB026800B575E2 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A640C2BAB026800B575E2 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +32,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB0A640A2BA9CB6900B575E2 /* MovieDatabaseAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,9 +117,6 @@
 			dependencies = (
 			);
 			name = WhereToWatch;
-			packageProductDependencies = (
-				EB0A64092BA9CB6900B575E2 /* MovieDatabaseAPI */,
-			);
 			productName = WhereToWatch;
 			productReference = EB0A63D22BA9B09400B575E2 /* WhereToWatch.app */;
 			productType = "com.apple.product-type.application";
@@ -151,9 +146,6 @@
 				ko,
 			);
 			mainGroup = EB0A63C92BA9B09400B575E2;
-			packageReferences = (
-				EB0A64082BA9CB6900B575E2 /* XCLocalSwiftPackageReference "MovieDatabaseAPI" */,
-			);
 			productRefGroup = EB0A63D32BA9B09400B575E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -456,20 +448,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		EB0A64082BA9CB6900B575E2 /* XCLocalSwiftPackageReference "MovieDatabaseAPI" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = MovieDatabaseAPI;
-		};
-/* End XCLocalSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		EB0A64092BA9CB6900B575E2 /* MovieDatabaseAPI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MovieDatabaseAPI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EB0A63CA2BA9B09400B575E2 /* Project object */;
 }
