@@ -1,0 +1,15 @@
+{
+  "originHash" : "d843d5aed0ac4ca565504da92b31d0c6dc9b6ff8a36e0a14dd728cb4b56b10ab",
+  "pins" : [
+    {
+      "identity" : "moviedatabaseapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/junho15/MovieDatabaseAPI.git",
+      "state" : {
+        "revision" : "dda4e20cd83cc49b6f88e6ff918d0893d5b34360",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
