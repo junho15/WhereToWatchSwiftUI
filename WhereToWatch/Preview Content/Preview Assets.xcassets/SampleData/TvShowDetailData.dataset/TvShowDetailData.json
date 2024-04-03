@@ -1,0 +1,123 @@
+{
+    "adult": false,
+    "backdrop_path": "/euzOZte7gh2MvocsMbQlv0IoKFI.jpg",
+    "created_by": [
+        {
+            "id": 1219520,
+            "credit_id": "62c9f31805f9cf004c83c7f6",
+            "name": "Debora Cahn",
+            "gender": 1,
+            "profile_path": null
+        }
+    ],
+    "episode_run_time": [],
+    "first_air_date": "2023-04-20",
+    "genres": [
+        {
+            "id": 18,
+            "name": "Drama"
+        }
+    ],
+    "homepage": "https://www.netflix.com/title/81288983",
+    "id": 203857,
+    "in_production": true,
+    "languages": [
+        "en"
+    ],
+    "last_air_date": "2023-04-20",
+    "last_episode_to_air": {
+        "id": 4301415,
+        "name": "The James Bond Clause",
+        "overview": "In London, Hal's actions cause friction as Kate heads to Paris with Dennison to get a handle on the Lenkov situation, which soon takes a shocking turn.",
+        "vote_average": 7.25,
+        "vote_count": 16,
+        "air_date": "2023-04-20",
+        "episode_number": 8,
+        "episode_type": "finale",
+        "production_code": "",
+        "runtime": 46,
+        "season_number": 1,
+        "show_id": 203857,
+        "still_path": "/i9i8ZFEQgWfuPBxm32h1BFj0Tmu.jpg"
+    },
+    "name": "The Diplomat",
+    "next_episode_to_air": null,
+    "networks": [
+        {
+            "id": 213,
+            "logo_path": "/wwemzKWzjKYJFfCeiB57q3r4Bcm.png",
+            "name": "Netflix",
+            "origin_country": ""
+        }
+    ],
+    "number_of_episodes": 8,
+    "number_of_seasons": 2,
+    "origin_country": [
+        "US"
+    ],
+    "original_language": "en",
+    "original_name": "The Diplomat",
+    "overview": "In the midst of an international crisis, a career diplomat lands in a high-profile job she’s unsuited for, with tectonic implications for her marriage and her political future.",
+    "popularity": 30.723,
+    "poster_path": "/nuqTVF7eS0FJFfF900VCbLjaMQe.jpg",
+    "production_companies": [
+        {
+            "id": 198487,
+            "logo_path": null,
+            "name": "Let's Not Turn This Into a Whole Big Production",
+            "origin_country": ""
+        },
+        {
+            "id": 198490,
+            "logo_path": null,
+            "name": "Well Red",
+            "origin_country": "US"
+        },
+        {
+            "id": 178464,
+            "logo_path": "/tyHnxjQJLH6h4iDQKhN5iqebWmX.png",
+            "name": "Netflix",
+            "origin_country": "US"
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "seasons": [
+        {
+            "air_date": "2023-04-20",
+            "episode_count": 8,
+            "id": 297064,
+            "name": "Season 1",
+            "overview": "",
+            "poster_path": "/cOKXV0FalCYixNmZYCfHXgyQ0VX.jpg",
+            "season_number": 1,
+            "vote_average": 6.9
+        },
+        {
+            "air_date": null,
+            "episode_count": 0,
+            "id": 377024,
+            "name": "Season 2",
+            "overview": "",
+            "poster_path": null,
+            "season_number": 2,
+            "vote_average": 0.0
+        }
+    ],
+    "spoken_languages": [
+        {
+            "english_name": "English",
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Returning Series",
+    "tagline": "Keep your friends close. Keep your enemies closer.",
+    "type": "Scripted",
+    "vote_average": 7.409,
+    "vote_count": 176
+}

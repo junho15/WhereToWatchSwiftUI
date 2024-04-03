@@ -16,6 +16,7 @@
 		EB58302E2BB6ED0E00A05309 /* MovieDatabaseAPI in Frameworks */ = {isa = PBXBuildFile; productRef = EB58302D2BB6ED0E00A05309 /* MovieDatabaseAPI */; };
 		EB5830362BBBEE4700A05309 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830352BBBEE4700A05309 /* Date.swift */; };
 		EB5830382BBBF3CE00A05309 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830372BBBF3CE00A05309 /* MediaType.swift */; };
+		EB58303A2BBD1FF500A05309 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830392BBD1FF500A05309 /* PreviewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		EB0A640C2BAB026800B575E2 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		EB5830352BBBEE4700A05309 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		EB5830372BBBF3CE00A05309 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
+		EB5830392BBD1FF500A05309 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		EB0A63DC2BA9B09500B575E2 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				EB5830392BBD1FF500A05309 /* PreviewData.swift */,
 				EB0A63DD2BA9B09500B575E2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -246,6 +249,7 @@
 				EB5830362BBBEE4700A05309 /* Date.swift in Sources */,
 				EB0A640D2BAB026800B575E2 /* Secrets.swift in Sources */,
 				EB0A63D62BA9B09400B575E2 /* WhereToWatchApp.swift in Sources */,
+				EB58303A2BBD1FF500A05309 /* PreviewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +396,7 @@
 				CODE_SIGN_ENTITLEMENTS = WhereToWatch/WhereToWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WhereToWatch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "WhereToWatch/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q76RZAC2A2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -437,7 +441,7 @@
 				CODE_SIGN_ENTITLEMENTS = WhereToWatch/WhereToWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WhereToWatch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "WhereToWatch/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q76RZAC2A2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;

@@ -1,0 +1,275 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/euzOZte7gh2MvocsMbQlv0IoKFI.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 203857,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Diplomat",
+            "overview": "국제적인 위기가 닥친 상황에서 영국 대사가 된 외교관. 새롭게 주어진 중요한 업무와 정계 스타와의 순탄치 않은 결혼 생활을 조율해 나가야 한다.",
+            "popularity": 44.158,
+            "poster_path": "/cOKXV0FalCYixNmZYCfHXgyQ0VX.jpg",
+            "first_air_date": "2023-04-20",
+            "name": "외교관",
+            "vote_average": 7.6,
+            "vote_count": 75
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/uJEAjS6aBTF3cWIHxscGIfYrDq.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 203762,
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "The Diplomat",
+            "overview": "The six-part series follows Laura Simmonds and her Barcelona Consul colleague and friend Alba Ortiz as they fight to protect British nationals who find themselves in trouble in the Catalan city.",
+            "popularity": 11.812,
+            "poster_path": "/h4txyCHHEohY3wB9139F5LYdfnZ.jpg",
+            "first_air_date": "2023-02-28",
+            "name": "The Diplomat",
+            "vote_average": 6.333,
+            "vote_count": 3
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/nQ5l5GhrsxbtWcZaqj3KKRFGLyY.jpg",
+            "genre_ids": [],
+            "id": 93455,
+            "origin_country": [],
+            "original_language": "de",
+            "original_name": "Die jungen Diplomaten",
+            "overview": "We bring the distant star of diplomacy closer and accompany five protagonists of the 2017 year of the \\\"Concours diplomatique\\\" during their training.",
+            "popularity": 0.6,
+            "poster_path": null,
+            "first_air_date": "2019-08-22",
+            "name": "The Young Diplomats",
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                35
+            ],
+            "id": 64636,
+            "origin_country": [
+                "DE"
+            ],
+            "original_language": "de",
+            "original_name": "Diplomaten küßt man nicht",
+            "overview": "",
+            "popularity": 0.6,
+            "poster_path": null,
+            "first_air_date": "1987-08-30",
+            "name": "Diplomaten küßt man nicht",
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/6lJ8JfeY1SjAL10ie2xzmF03TEz.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 75446,
+            "origin_country": [
+                "DE"
+            ],
+            "original_language": "de",
+            "original_name": "Die Diplomatin",
+            "overview": "",
+            "popularity": 3.319,
+            "poster_path": "/aSzXF4ZOhOgbCjgN9xQAuZFbWr5.jpg",
+            "first_air_date": "2016-04-30",
+            "name": "Die Diplomatin",
+            "vote_average": 4.0,
+            "vote_count": 1
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/kTcuAfNEht7GUjP0zjlBJ1GYb2m.jpg",
+            "genre_ids": [
+                18,
+                9648,
+                80
+            ],
+            "id": 91430,
+            "origin_country": [
+                "JP"
+            ],
+            "original_language": "ja",
+            "original_name": "外交官 黒田康作",
+            "overview": "오다 유지 주연으로 2009년에 개봉된 영화 아말피 여신의 보수의 속편에 해당하는 이야기로 사건 해결을 주축으로 외교의 어둠에 날카롭게 돌진해가고 영화에서는 그려지지 않았던 구로다의 과거와 인간 요소가 더해져 압도적인 재미와 손에 땀을 쥐게 하는 전개가 그려진 드라마.",
+            "popularity": 4.69,
+            "poster_path": "/3wh3MlHqaVDLwfb8v30zfzby72s.jpg",
+            "first_air_date": "2011-01-13",
+            "name": "외교관 쿠로다 코사쿠",
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/g50KQTuQU6Vx9QcoZzyR1LTIJS3.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 95286,
+            "origin_country": [
+                "CN"
+            ],
+            "original_language": "zh",
+            "original_name": "外交风云",
+            "overview": "",
+            "popularity": 8.34,
+            "poster_path": "/sGC6CiOmbZDBzaAXZ7TQHJnDv4e.jpg",
+            "first_air_date": "2019-09-19",
+            "name": "Diplomatic Situation",
+            "vote_average": 8.7,
+            "vote_count": 3
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                35
+            ],
+            "id": 18097,
+            "origin_country": [
+                "NZ"
+            ],
+            "original_language": "en",
+            "original_name": "Diplomatic Immunity",
+            "overview": "Diplomatic Immunity is a New Zealand comedy that follows the misadventures at the consulate of The Most Royal Kingdom of Feausi and a fallen New Zealand Foreign Affairs high-flier who has been sent in to straighten out the consulate staff. The show screened in New Zealand on TV1, every Tuesday night at 10:00.",
+            "popularity": 0.6,
+            "poster_path": "/rh0uXnKVMxLaHjAwufM0UrrZIQU.jpg",
+            "first_air_date": "2009-03-10",
+            "name": "Diplomatic Immunity",
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 33696,
+            "origin_country": [],
+            "original_language": "en",
+            "original_name": "Diplomatic Passport",
+            "overview": "Diplomatic Passport is a Canadian interview television series which aired on CBC Television from 1961 to 1962.",
+            "popularity": 0.6,
+            "poster_path": null,
+            "first_air_date": "",
+            "name": "Diplomatic Passport",
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                10763
+            ],
+            "id": 12420,
+            "origin_country": [
+                "CA"
+            ],
+            "original_language": "en",
+            "original_name": "Diplomatic Immunity",
+            "overview": "Diplomatic Immunity was a weekly political analysis and debate television show on TVOntario, which ran until 2006. Issues discussed reflected contemporary concerns; recently, these included terrorism, Middle East affairs, and US politics, though potentially any issue of international significance was considered.\\n\\nIt was hosted by Steve Paikin, and featured regular guests and invited analysts. Regular guests included:\\n\\n⁕Janice Stein, Director of the Munk Centre for International Studies at the University of Toronto.\\n\\n⁕Patrick Martin, a columnist and editor at the Globe and Mail\\n\\n⁕Richard Gwyn, a columnist at the Toronto Star\\n\\n⁕Lewis MacKenzie, a retired Major-General of the Canadian Forces\\n\\n⁕Eric Margolis, a columnist at the Toronto Sun and the Huffington Post\\n\\nInvited analysts were typically experts in the field of discussion; they were sourced from academia, politics and the business community alike.\\n\\nThe show aired on Friday nights at 11PM, and Sundays at 3PM and 11PM. It was cancelled at the same time as the nightly newsmagazine Studio 2. The new series The Agenda incorporated elements of both shows.",
+            "popularity": 0.6,
+            "poster_path": null,
+            "first_air_date": "",
+            "name": "Diplomatic Immunity",
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/uuyB6e2bGPDQiTnLBmC11ltdvHF.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 152493,
+            "origin_country": [
+                "DK"
+            ],
+            "original_language": "da",
+            "original_name": "Diplomaterne",
+            "overview": "",
+            "popularity": 0.6,
+            "poster_path": "/277loLhjQYt3zH2FK1Q3DmB66if.jpg",
+            "first_air_date": "2021-11-15",
+            "name": "Diplomaterne",
+            "vote_average": 1.0,
+            "vote_count": 1
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 17758,
+            "origin_country": [],
+            "original_language": "en",
+            "original_name": "Diplomatic License",
+            "overview": "Diplomatic License was a weekly CNN International news program covering the United Nations which ran from 1994 to 2006. The show takes its name from the legal concept of diplomatic immunity. It was hosted by Richard Roth, CNN's UN correspondent. The program featured interviews with UN insiders such as Mark Malloch Brown, chief of staff to former Secretary-General Kofi Annan, as well as with Annan himself. Additionally, the program featured debates among a rotating panel of journalists covering the UN and international diplomacy, moderated by Roth. The program was filmed in New York City due to the location of United Nations headquarters.",
+            "popularity": 0.6,
+            "poster_path": null,
+            "first_air_date": "",
+            "name": "Diplomatic License",
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 38500,
+            "origin_country": [
+                "HU"
+            ],
+            "original_language": "en",
+            "original_name": "Diplomatavadász",
+            "overview": "",
+            "popularity": 0.6,
+            "poster_path": null,
+            "first_air_date": "",
+            "name": "Diplomatavadász",
+            "vote_average": 0.0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                18
+            ],
+            "id": 21170,
+            "origin_country": [
+                "AU"
+            ],
+            "original_language": "en",
+            "original_name": "False Witness",
+            "overview": "A British diplomat is arrested on charges of working with Russian mafia. After death threats to his wife, they are taken into protective custody. Then the MI6 shows up with a new piece of the puzzle.",
+            "popularity": 4.849,
+            "poster_path": "/xaUgci5oAiwn81OnflaHfAY72lK.jpg",
+            "first_air_date": "2009-01-11",
+            "name": "False Witness",
+            "vote_average": 2.0,
+            "vote_count": 1
+        }
+    ],
+    "total_pages": 1,
+    "total_results": 14
+}
