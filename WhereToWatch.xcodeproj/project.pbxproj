@@ -20,6 +20,7 @@
 		EB58303C2BBE684D00A05309 /* MovieDatabaseAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58303B2BBE684D00A05309 /* MovieDatabaseAPIError.swift */; };
 		EB58303E2BBE68BB00A05309 /* WatchProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58303D2BBE68BB00A05309 /* WatchProviderType.swift */; };
 		EB5830422BBE74CE00A05309 /* LocaleRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830412BBE74CE00A05309 /* LocaleRepresentable.swift */; };
+		EB5830442BBED97F00A05309 /* GenresListFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830432BBED97F00A05309 /* GenresListFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EB58303B2BBE684D00A05309 /* MovieDatabaseAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDatabaseAPIError.swift; sourceTree = "<group>"; };
 		EB58303D2BBE68BB00A05309 /* WatchProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderType.swift; sourceTree = "<group>"; };
 		EB5830412BBE74CE00A05309 /* LocaleRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleRepresentable.swift; sourceTree = "<group>"; };
+		EB5830432BBED97F00A05309 /* GenresListFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				EB0A63D52BA9B09400B575E2 /* WhereToWatchApp.swift */,
-				EB0A63D72BA9B09400B575E2 /* ContentView.swift */,
+				EB5830342BBBEE1F00A05309 /* Extensions */,
 				EB5830302BBBD57000A05309 /* Models */,
+				EB0A640B2BAB025800B575E2 /* Utilites */,
 				EB58302F2BBBD53900A05309 /* ViewModels */,
 				EB5830312BBBD57A00A05309 /* Views */,
-				EB0A640B2BAB025800B575E2 /* Utilites */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -113,7 +115,7 @@
 		EB0A640B2BAB025800B575E2 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
-				EB5830342BBBEE1F00A05309 /* Extensions */,
+				EB5830432BBED97F00A05309 /* GenresListFetcher.swift */,
 				EB5830412BBE74CE00A05309 /* LocaleRepresentable.swift */,
 				EB0A640C2BAB026800B575E2 /* Secrets.swift */,
 			);
@@ -137,6 +139,7 @@
 		EB5830312BBBD57A00A05309 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EB0A63D72BA9B09400B575E2 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				EB5830382BBBF3CE00A05309 /* MediaType.swift in Sources */,
 				EB0A63D82BA9B09400B575E2 /* ContentView.swift in Sources */,
 				EB5830362BBBEE4700A05309 /* Date.swift in Sources */,
+				EB5830442BBED97F00A05309 /* GenresListFetcher.swift in Sources */,
 				EB0A640D2BAB026800B575E2 /* Secrets.swift in Sources */,
 				EB0A63D62BA9B09400B575E2 /* WhereToWatchApp.swift in Sources */,
 				EB58303A2BBD1FF500A05309 /* PreviewData.swift in Sources */,
