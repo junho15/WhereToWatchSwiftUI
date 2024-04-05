@@ -8,12 +8,12 @@ protocol GenresListFetcherProtocol {
 }
 
 final actor GenresListFetcher: GenresListFetcherProtocol {
-    private let movieDatabaseAPIClient: MovieDatabaseAPIClient
+    private let movieDatabaseAPIClient: MovieDatabaseAPIClientProtocol
     private var cachedMovieGenresList: [LanguageCode: GenreList]
     private var cachedTvShowGenresList: [LanguageCode: GenreList]
 
     init(
-        movieDatabaseAPIClient: MovieDatabaseAPIClient,
+        movieDatabaseAPIClient: MovieDatabaseAPIClientProtocol,
         cachedMovieGenresList: [LanguageCode: GenreList] = [:],
         cachedTvShowGenresList: [LanguageCode: GenreList] = [:]
     ) {

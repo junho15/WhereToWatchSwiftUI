@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/junho15/MovieDatabaseAPI.git",
       "state" : {
-        "revision" : "dda4e20cd83cc49b6f88e6ff918d0893d5b34360",
-        "version" : "1.0.0"
+        "revision" : "d165fe2db107ea9702aabaad34797ba67dffbe73",
+        "version" : "1.0.2"
       }
     }
   ],
