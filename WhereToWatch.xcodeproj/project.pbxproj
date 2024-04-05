@@ -25,6 +25,7 @@
 		EB5830442BBED97F00A05309 /* GenresListFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830432BBED97F00A05309 /* GenresListFetcher.swift */; };
 		EB58304F2BC0164900A05309 /* GenresListFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */; };
 		EB5830562BC017D000A05309 /* MockMovieDatabaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830552BC017D000A05309 /* MockMovieDatabaseAPIClient.swift */; };
+		EB5830582BC02C6A00A05309 /* TrendingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830572BC02C6A00A05309 /* TrendingViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		EB58304C2BC0164900A05309 /* WhereToWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereToWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListFetcherTests.swift; sourceTree = "<group>"; };
 		EB5830552BC017D000A05309 /* MockMovieDatabaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieDatabaseAPIClient.swift; sourceTree = "<group>"; };
+		EB5830572BC02C6A00A05309 /* TrendingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */,
+				EB5830572BC02C6A00A05309 /* TrendingViewModelTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			files = (
 				EB5830562BC017D000A05309 /* MockMovieDatabaseAPIClient.swift in Sources */,
 				EB58304F2BC0164900A05309 /* GenresListFetcherTests.swift in Sources */,
+				EB5830582BC02C6A00A05309 /* TrendingViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
