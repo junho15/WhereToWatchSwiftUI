@@ -21,6 +21,7 @@
 		EB58303E2BBE68BB00A05309 /* WatchProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58303D2BBE68BB00A05309 /* WatchProviderType.swift */; };
 		EB5830422BBE74CE00A05309 /* LocaleRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830412BBE74CE00A05309 /* LocaleRepresentable.swift */; };
 		EB5830442BBED97F00A05309 /* GenresListFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830432BBED97F00A05309 /* GenresListFetcher.swift */; };
+		EB58304F2BC0164900A05309 /* GenresListFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */; };
 		EB5830562BC017D000A05309 /* MockMovieDatabaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830552BC017D000A05309 /* MockMovieDatabaseAPIClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		EB5830412BBE74CE00A05309 /* LocaleRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleRepresentable.swift; sourceTree = "<group>"; };
 		EB5830432BBED97F00A05309 /* GenresListFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListFetcher.swift; sourceTree = "<group>"; };
 		EB58304C2BC0164900A05309 /* WhereToWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereToWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListFetcherTests.swift; sourceTree = "<group>"; };
 		EB5830552BC017D000A05309 /* MockMovieDatabaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieDatabaseAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,9 +182,18 @@
 		EB58304D2BC0164900A05309 /* WhereToWatchTests */ = {
 			isa = PBXGroup;
 			children = (
+				EB5830592BC02C8200A05309 /* Tests */,
 				EB5830552BC017D000A05309 /* MockMovieDatabaseAPIClient.swift */,
 			);
 			path = WhereToWatchTests;
+			sourceTree = "<group>";
+		};
+		EB5830592BC02C8200A05309 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5830562BC017D000A05309 /* MockMovieDatabaseAPIClient.swift in Sources */,
+				EB58304F2BC0164900A05309 /* GenresListFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
