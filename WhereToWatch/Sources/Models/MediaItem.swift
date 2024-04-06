@@ -10,6 +10,20 @@ struct MediaItem: Identifiable {
     let year: String?
     let overview: String?
 
+    init(
+        id: Int, mediaType: MediaType, posterPath: String?, backdropPath: String?,
+        title: String?, genre: String?, year: String?, overview: String?
+    ) {
+        self.id = id
+        self.mediaType = mediaType
+        self.posterPath = posterPath
+        self.backdropPath = backdropPath
+        self.title = title
+        self.genre = genre
+        self.year = year
+        self.overview = overview
+    }
+
     init(media: any MediaProtocol, genreList: GenreList?) {
         self.id = media.id
         self.mediaType = media.mediaType
