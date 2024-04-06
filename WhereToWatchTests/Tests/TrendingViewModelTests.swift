@@ -44,7 +44,7 @@ final class TrendingViewModelTests: XCTestCase {
 
         // when
         do {
-            _ = try await sut.fetchTrendingMovies(of: .day)
+            try await sut.fetchTrendingMovies(of: .day)
             XCTFail("Should return MovieDatabaseAPIError.badStatus")
         } catch {
             if let error = error as? MovieDatabaseAPIError, case .badStatus = error {
@@ -77,7 +77,7 @@ final class TrendingViewModelTests: XCTestCase {
 
         // when
         do {
-            _ = try await sut.fetchTrendingTVShows(of: .day)
+            try await sut.fetchTrendingTVShows(of: .day)
             XCTFail("Should return MovieDatabaseAPIError.badStatus")
         } catch {
             if let error = error as? MovieDatabaseAPIError, case .badStatus = error {
