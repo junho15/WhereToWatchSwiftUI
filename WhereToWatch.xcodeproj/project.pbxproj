@@ -26,6 +26,7 @@
 		EB58304F2BC0164900A05309 /* GenresListFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */; };
 		EB5830562BC017D000A05309 /* MockMovieDatabaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830552BC017D000A05309 /* MockMovieDatabaseAPIClient.swift */; };
 		EB5830582BC02C6A00A05309 /* TrendingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830572BC02C6A00A05309 /* TrendingViewModelTests.swift */; };
+		EB58305B2BC15BBE00A05309 /* CreditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58305A2BC15BBE00A05309 /* CreditsViewModel.swift */; };
 		EB58305D2BC15DC500A05309 /* CreditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58305C2BC15DC500A05309 /* CreditItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListFetcherTests.swift; sourceTree = "<group>"; };
 		EB5830552BC017D000A05309 /* MockMovieDatabaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieDatabaseAPIClient.swift; sourceTree = "<group>"; };
 		EB5830572BC02C6A00A05309 /* TrendingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModelTests.swift; sourceTree = "<group>"; };
+		EB58305A2BC15BBE00A05309 /* CreditsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewModel.swift; sourceTree = "<group>"; };
 		EB58305C2BC15DC500A05309 /* CreditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 		EB58302F2BBBD53900A05309 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EB58305A2BC15BBE00A05309 /* CreditsViewModel.swift */,
 				EB58303F2BBE6E7000A05309 /* TrendingViewModel.swift */,
 			);
 			path = ViewModels;
@@ -343,6 +346,7 @@
 				EB0A63D82BA9B09400B575E2 /* ContentView.swift in Sources */,
 				EB5830362BBBEE4700A05309 /* Date.swift in Sources */,
 				EB58305D2BC15DC500A05309 /* CreditItem.swift in Sources */,
+				EB58305B2BC15BBE00A05309 /* CreditsViewModel.swift in Sources */,
 				EB5830442BBED97F00A05309 /* GenresListFetcher.swift in Sources */,
 				EB5830332BBBEC7900A05309 /* MediaItem.swift in Sources */,
 				EB0A640D2BAB026800B575E2 /* Secrets.swift in Sources */,
