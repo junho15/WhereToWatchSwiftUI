@@ -46,25 +46,25 @@ final class GenresListFetcherTests: XCTestCase {
         }
     }
 
-    func testFetchTvShowGenresList() async throws {
+    func testFetchTVShowGenresList() async throws {
         // given
         movieDatabaseAPIClient.tvShowGenresListResult = PreviewData.genreListData
 
         // when
-        let result = try await sut.fetchTvShowGenresList(languageCode: "Test")
+        let result = try await sut.fetchTVShowGenresList(languageCode: "Test")
 
         // then
         XCTAssertEqual(result.genres[0].id, PreviewData.genreListData.genres[0].id)
 
     }
 
-    func testFetchTvShowGenresListWithError() async {
+    func testFetchTVShowGenresListWithError() async {
         // given
         movieDatabaseAPIClient.tvShowGenresListError = MovieDatabaseAPIError.badStatus
 
         // when
         do {
-            _ = try await sut.fetchTvShowGenresList(languageCode: "Test")
+            _ = try await sut.fetchTVShowGenresList(languageCode: "Test")
             XCTFail("Should return MovieDatabaseAPIError.badStatus")
         } catch {
             if let error = error as? MovieDatabaseAPIError, case .badStatus = error {

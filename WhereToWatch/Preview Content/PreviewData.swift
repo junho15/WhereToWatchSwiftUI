@@ -8,8 +8,8 @@ enum PreviewData {
     static let moviePageData: Page<Movie> = load("MoviePageData")
     static let similarMovieData: Page<Movie> = load("SimilarMovieData")
     static let similarTVShowData: Page<TVShow> = load("SimilarTVShowData")
-    static let tvShowDetailData: TVShow = load("TvShowDetailData")
-    static let tvShowPageData: Page<TVShow> = load("TvShowPageData")
+    static let tvShowDetailData: TVShow = load("TVShowDetailData")
+    static let tvShowPageData: Page<TVShow> = load("TVShowPageData")
     static let watchProviderResultData: WatchProviderResult = load("WatchProviderResultData")
 
     private static var decoder: JSONDecoder {

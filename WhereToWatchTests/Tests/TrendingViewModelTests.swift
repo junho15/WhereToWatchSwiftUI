@@ -55,13 +55,13 @@ final class TrendingViewModelTests: XCTestCase {
         }
     }
 
-    func testFetchTrendingTvShows() async throws {
+    func testFetchTrendingTVShows() async throws {
         // given
         movieDatabaseAPIClient.tvShowGenresListResult = PreviewData.genreListData
         movieDatabaseAPIClient.trendingTVShowsResult = PreviewData.tvShowPageData
 
         // when
-        try await sut.fetchTrendingTvShows(of: .day)
+        try await sut.fetchTrendingTVShows(of: .day)
 
         // then
         await MainActor.run {
@@ -70,14 +70,14 @@ final class TrendingViewModelTests: XCTestCase {
         }
     }
 
-    func testFetchTrendingTvShowsWithError() async {
+    func testFetchTrendingTVShowsWithError() async {
         // given
         movieDatabaseAPIClient.tvShowGenresListResult = PreviewData.genreListData
         movieDatabaseAPIClient.trendingTVShowsError = MovieDatabaseAPIError.badStatus
 
         // when
         do {
-            _ = try await sut.fetchTrendingTvShows(of: .day)
+            _ = try await sut.fetchTrendingTVShows(of: .day)
             XCTFail("Should return MovieDatabaseAPIError.badStatus")
         } catch {
             if let error = error as? MovieDatabaseAPIError, case .badStatus = error {

@@ -3,11 +3,16 @@ import MovieDatabaseAPI
 
 @MainActor
 final class TrendingViewModel: ObservableObject, LocaleRepresentable {
+
+    // MARK: Properties
+
     @Published var movieMediaItems: [MediaItem]
     @Published var tvShowMediaItems: [MediaItem]
 
     private let movieDatabaseAPIClient: MovieDatabaseAPIClientProtocol
     private let genresListFetcher: GenresListFetcherProtocol
+
+    // MARK: Lifecycle
 
     init(
         movieDatabaseAPIClient: MovieDatabaseAPIClientProtocol,
@@ -20,7 +25,11 @@ final class TrendingViewModel: ObservableObject, LocaleRepresentable {
         self.movieMediaItems = movieMediaItems
         self.tvShowMediaItems = tvShowMediaItems
     }
+}
 
+// MARK: - Methods
+
+extension TrendingViewModel {
     func fetchTrendingMovies(of timeWindow: MovieDatabaseURL.TimeWindow) async throws {
         guard let languageCode, let languageCountryCode else { return }
 
@@ -36,17 +45,17 @@ final class TrendingViewModel: ObservableObject, LocaleRepresentable {
         }
     }
 
-    func fetchTrendingTvShows(of timeWindow: MovieDatabaseURL.TimeWindow) async throws {
+    func fetchTrendingTVShows(of timeWindow: MovieDatabaseURL.TimeWindow) async throws {
         guard let languageCode, let languageCountryCode else { return }
 
-        let genresList = try await genresListFetcher.fetchTvShowGenresList(languageCode: languageCode)
+        let genresList = try await genresListFetcher.fetchTVShowGenresList(languageCode: languageCode)
 
-        let fetchedTrendingTvShows = try await movieDatabaseAPIClient.fetchTrendingTVShows(
+        let fetchedTrendingTVShows = try await movieDatabaseAPIClient.fetchTrendingTVShows(
             timeWindow: timeWindow,
             language: languageCountryCode
         )
 
-        self.tvShowMediaItems = fetchedTrendingTvShows.results.map { tvShow in
+        self.tvShowMediaItems = fetchedTrendingTVShows.results.map { tvShow in
             MediaItem(media: tvShow, genreList: genresList)
         }
     }
