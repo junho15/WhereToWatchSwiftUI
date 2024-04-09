@@ -30,6 +30,7 @@
 		EB58305D2BC15DC500A05309 /* CreditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58305C2BC15DC500A05309 /* CreditItem.swift */; };
 		EB58305F2BC1673700A05309 /* CreditsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58305E2BC1673700A05309 /* CreditsViewModelTests.swift */; };
 		EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830612BC2541D00A05309 /* SimilarViewModel.swift */; };
+		EB5830642BC5095600A05309 /* SimilarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		EB58305C2BC15DC500A05309 /* CreditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditItem.swift; sourceTree = "<group>"; };
 		EB58305E2BC1673700A05309 /* CreditsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewModelTests.swift; sourceTree = "<group>"; };
 		EB5830612BC2541D00A05309 /* SimilarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarViewModel.swift; sourceTree = "<group>"; };
+		EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			children = (
 				EB58305E2BC1673700A05309 /* CreditsViewModelTests.swift */,
 				EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */,
+				EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */,
 				EB5830572BC02C6A00A05309 /* TrendingViewModelTests.swift */,
 			);
 			path = Tests;
@@ -374,6 +377,7 @@
 				EB58304F2BC0164900A05309 /* GenresListFetcherTests.swift in Sources */,
 				EB5830582BC02C6A00A05309 /* TrendingViewModelTests.swift in Sources */,
 				EB58305F2BC1673700A05309 /* CreditsViewModelTests.swift in Sources */,
+				EB5830642BC5095600A05309 /* SimilarViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
