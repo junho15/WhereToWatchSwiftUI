@@ -32,6 +32,7 @@
 		EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830612BC2541D00A05309 /* SimilarViewModel.swift */; };
 		EB5830642BC5095600A05309 /* SimilarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */; };
 		EB5830662BC5393A00A05309 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830652BC5393A00A05309 /* SearchViewModel.swift */; };
+		EB5830682BC9594B00A05309 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830672BC9594B00A05309 /* SearchViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		EB5830612BC2541D00A05309 /* SimilarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarViewModel.swift; sourceTree = "<group>"; };
 		EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarViewModelTests.swift; sourceTree = "<group>"; };
 		EB5830652BC5393A00A05309 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		EB5830672BC9594B00A05309 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			children = (
 				EB58305E2BC1673700A05309 /* CreditsViewModelTests.swift */,
 				EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */,
+				EB5830672BC9594B00A05309 /* SearchViewModelTests.swift */,
 				EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */,
 				EB5830572BC02C6A00A05309 /* TrendingViewModelTests.swift */,
 			);
@@ -379,6 +382,7 @@
 			files = (
 				EB5830562BC017D000A05309 /* MockMovieDatabaseAPIClient.swift in Sources */,
 				EB58304F2BC0164900A05309 /* GenresListFetcherTests.swift in Sources */,
+				EB5830682BC9594B00A05309 /* SearchViewModelTests.swift in Sources */,
 				EB5830582BC02C6A00A05309 /* TrendingViewModelTests.swift in Sources */,
 				EB58305F2BC1673700A05309 /* CreditsViewModelTests.swift in Sources */,
 				EB5830642BC5095600A05309 /* SimilarViewModelTests.swift in Sources */,
