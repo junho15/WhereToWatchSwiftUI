@@ -31,6 +31,7 @@
 		EB58305F2BC1673700A05309 /* CreditsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58305E2BC1673700A05309 /* CreditsViewModelTests.swift */; };
 		EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830612BC2541D00A05309 /* SimilarViewModel.swift */; };
 		EB5830642BC5095600A05309 /* SimilarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */; };
+		EB5830662BC5393A00A05309 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830652BC5393A00A05309 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		EB58305E2BC1673700A05309 /* CreditsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewModelTests.swift; sourceTree = "<group>"; };
 		EB5830612BC2541D00A05309 /* SimilarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarViewModel.swift; sourceTree = "<group>"; };
 		EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarViewModelTests.swift; sourceTree = "<group>"; };
+		EB5830652BC5393A00A05309 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				EB58305A2BC15BBE00A05309 /* CreditsViewModel.swift */,
+				EB5830652BC5393A00A05309 /* SearchViewModel.swift */,
 				EB5830612BC2541D00A05309 /* SimilarViewModel.swift */,
 				EB58303F2BBE6E7000A05309 /* TrendingViewModel.swift */,
 			);
@@ -364,6 +367,7 @@
 				EB5830402BBE6E7000A05309 /* TrendingViewModel.swift in Sources */,
 				EB58303E2BBE68BB00A05309 /* WatchProviderType.swift in Sources */,
 				EB5830422BBE74CE00A05309 /* LocaleRepresentable.swift in Sources */,
+				EB5830662BC5393A00A05309 /* SearchViewModel.swift in Sources */,
 				EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */,
 				EB58303C2BBE684D00A05309 /* MovieDatabaseAPIError.swift in Sources */,
 			);
