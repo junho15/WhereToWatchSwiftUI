@@ -36,6 +36,7 @@
 		EB58306C2BCE7E2C00A05309 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB5830692BCE7E2C00A05309 /* Model.xcdatamodeld */; };
 		EB5830732BCE88F900A05309 /* MediaItemEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830712BCE88F900A05309 /* MediaItemEntity+CoreDataClass.swift */; };
 		EB5830742BCE88F900A05309 /* MediaItemEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830722BCE88F900A05309 /* MediaItemEntity+CoreDataProperties.swift */; };
+		EB5830762BCEA7C100A05309 /* FavoriteMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830752BCEA7C100A05309 /* FavoriteMediaItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		EB58306B2BCE7E2C00A05309 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		EB5830712BCE88F900A05309 /* MediaItemEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaItemEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		EB5830722BCE88F900A05309 /* MediaItemEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaItemEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EB5830752BCEA7C100A05309 /* FavoriteMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMediaItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 		EB58306E2BCE86A000A05309 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				EB5830752BCEA7C100A05309 /* FavoriteMediaItem.swift */,
 				EB5830712BCE88F900A05309 /* MediaItemEntity+CoreDataClass.swift */,
 				EB5830722BCE88F900A05309 /* MediaItemEntity+CoreDataProperties.swift */,
 			);
@@ -399,6 +402,7 @@
 				EB5830402BBE6E7000A05309 /* TrendingViewModel.swift in Sources */,
 				EB58303E2BBE68BB00A05309 /* WatchProviderType.swift in Sources */,
 				EB5830422BBE74CE00A05309 /* LocaleRepresentable.swift in Sources */,
+				EB5830762BCEA7C100A05309 /* FavoriteMediaItem.swift in Sources */,
 				EB5830662BC5393A00A05309 /* SearchViewModel.swift in Sources */,
 				EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */,
 				EB58303C2BBE684D00A05309 /* MovieDatabaseAPIError.swift in Sources */,
