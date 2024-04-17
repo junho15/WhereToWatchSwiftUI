@@ -1,5 +1,14 @@
 import CoreData
 
+protocol FavoriteServiceProtocol {
+    associatedtype SortOption
+
+    func contains(_ id: FavoriteMediaItem.ID) throws -> Bool
+    func fetch(sortOption: SortOption, offset: Int?, limit: Int?) throws -> [FavoriteMediaItem]
+    func add(_ favoriteMediaItem: FavoriteMediaItem) throws
+    func remove(_ id: FavoriteMediaItem.ID) throws
+}
+
 final class FavoriteService {
     typealias FetchRequest = NSFetchRequest<MediaItemEntity>
 
@@ -32,22 +41,17 @@ final class FavoriteService {
     private init() { }
 }
 
-extension FavoriteService {
+extension FavoriteService: FavoriteServiceProtocol {
     func contains(_ id: FavoriteMediaItem.ID) throws -> Bool {
         let result = try fetch(id: id)
         return result.isEmpty == false
     }
 
     func fetch(
-        sortOption: SortOption = .registrationDate, query: String? = nil, offset: Int? = nil, limit: Int? = nil
+        sortOption: SortOption = .registrationDate, offset: Int? = nil, limit: Int? = nil
     ) throws -> [FavoriteMediaItem] {
         let request = fetchRequest
         request.sortDescriptors = [sortOption.sortDescriptor]
-
-        if let query,
-           query.isEmpty == false {
-            request.predicate = NSPredicate(format: Constants.titlePredicateFormat, query)
-        }
 
         if let offset,
            let limit {
@@ -94,25 +98,17 @@ extension FavoriteService {
 
         try save()
     }
-}
 
-extension FavoriteService {
     enum SortOption: CaseIterable, CustomStringConvertible {
         case registrationDate
         case reverseRegistrationDate
-        case title
-        case reverseTitle
 
-        fileprivate var sortDescriptor: NSSortDescriptor {
+        var sortDescriptor: NSSortDescriptor {
             switch self {
             case .registrationDate:
                 return NSSortDescriptor(key: "registrationDate", ascending: true)
             case .reverseRegistrationDate:
                 return NSSortDescriptor(key: "registrationDate", ascending: false)
-            case .title:
-                return NSSortDescriptor(key: "title", ascending: true)
-            case .reverseTitle:
-                return NSSortDescriptor(key: "title", ascending: false)
             }
         }
 
@@ -127,21 +123,15 @@ extension FavoriteService {
                     "REVERSE_REGISTRATION_DATE_ORDER_DESCRIPTION",
                     comment: "Reverse Registration Date Order Description"
                 )
-            case .title:
-                return NSLocalizedString(
-                    "TITLE_ORDER_DESCRIPTION", comment: "Title Order Description"
-                )
-            case .reverseTitle:
-                return NSLocalizedString(
-                    "REVERSE_TITLE_ORDER_DESCRIPTION", comment: "Reverse Title Order Description"
-                )
             }
         }
     }
 
+}
+
+extension FavoriteService {
     private enum Constants {
         static let persistentContainerName = "Model"
-        static let titlePredicateFormat = "title CONTAINS %@"
         static let idPredicateFormat = "id == %lld"
     }
 }
