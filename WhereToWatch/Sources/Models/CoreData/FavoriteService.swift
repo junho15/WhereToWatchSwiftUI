@@ -1,10 +1,8 @@
 import CoreData
 
 protocol FavoriteServiceProtocol {
-    associatedtype SortOption
-
     func contains(_ id: FavoriteMediaItem.ID) throws -> Bool
-    func fetch(sortOption: SortOption, offset: Int?, limit: Int?) throws -> [FavoriteMediaItem]
+    func fetch(sortOption: FavoritesSortOption, offset: Int?, limit: Int?) throws -> [FavoriteMediaItem]
     func add(_ favoriteMediaItem: FavoriteMediaItem) throws
     func remove(_ id: FavoriteMediaItem.ID) throws
 }
@@ -48,7 +46,7 @@ extension FavoriteService: FavoriteServiceProtocol {
     }
 
     func fetch(
-        sortOption: SortOption = .registrationDate, offset: Int? = nil, limit: Int? = nil
+        sortOption: FavoritesSortOption = .registrationDate, offset: Int? = nil, limit: Int? = nil
     ) throws -> [FavoriteMediaItem] {
         let request = fetchRequest
         request.sortDescriptors = [sortOption.sortDescriptor]
@@ -98,35 +96,6 @@ extension FavoriteService: FavoriteServiceProtocol {
 
         try save()
     }
-
-    enum SortOption: CaseIterable, CustomStringConvertible {
-        case registrationDate
-        case reverseRegistrationDate
-
-        var sortDescriptor: NSSortDescriptor {
-            switch self {
-            case .registrationDate:
-                return NSSortDescriptor(key: "registrationDate", ascending: true)
-            case .reverseRegistrationDate:
-                return NSSortDescriptor(key: "registrationDate", ascending: false)
-            }
-        }
-
-        var description: String {
-            switch self {
-            case .registrationDate:
-                return NSLocalizedString(
-                    "REGISTRATION_DATE_ORDER_DESCRIPTION", comment: "Registration Date Order Description"
-                )
-            case .reverseRegistrationDate:
-                return NSLocalizedString(
-                    "REVERSE_REGISTRATION_DATE_ORDER_DESCRIPTION",
-                    comment: "Reverse Registration Date Order Description"
-                )
-            }
-        }
-    }
-
 }
 
 extension FavoriteService {
