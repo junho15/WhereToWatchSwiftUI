@@ -38,6 +38,7 @@
 		EB5830732BCE88F900A05309 /* MediaItemEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830712BCE88F900A05309 /* MediaItemEntity+CoreDataClass.swift */; };
 		EB5830742BCE88F900A05309 /* MediaItemEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830722BCE88F900A05309 /* MediaItemEntity+CoreDataProperties.swift */; };
 		EB5830762BCEA7C100A05309 /* FavoriteMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5830752BCEA7C100A05309 /* FavoriteMediaItem.swift */; };
+		EBEB9E4E2BD6708500D0DEBA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E4D2BD6708500D0DEBA /* FavoritesViewModel.swift */; };
 		EBEB9E502BD67B9B00D0DEBA /* FavoritesSortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E4F2BD67B9B00D0DEBA /* FavoritesSortOption.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		EB5830712BCE88F900A05309 /* MediaItemEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaItemEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		EB5830722BCE88F900A05309 /* MediaItemEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaItemEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EB5830752BCEA7C100A05309 /* FavoriteMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMediaItem.swift; sourceTree = "<group>"; };
+		EBEB9E4D2BD6708500D0DEBA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		EBEB9E4F2BD67B9B00D0DEBA /* FavoritesSortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSortOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				EB58305A2BC15BBE00A05309 /* CreditsViewModel.swift */,
+				EBEB9E4D2BD6708500D0DEBA /* FavoritesViewModel.swift */,
 				EB5830652BC5393A00A05309 /* SearchViewModel.swift */,
 				EB5830612BC2541D00A05309 /* SimilarViewModel.swift */,
 				EB58303F2BBE6E7000A05309 /* TrendingViewModel.swift */,
@@ -405,6 +408,7 @@
 				EB5830732BCE88F900A05309 /* MediaItemEntity+CoreDataClass.swift in Sources */,
 				EB5830742BCE88F900A05309 /* MediaItemEntity+CoreDataProperties.swift in Sources */,
 				EB0A640D2BAB026800B575E2 /* Secrets.swift in Sources */,
+				EBEB9E4E2BD6708500D0DEBA /* FavoritesViewModel.swift in Sources */,
 				EB0A63D62BA9B09400B575E2 /* WhereToWatchApp.swift in Sources */,
 				EB58303A2BBD1FF500A05309 /* PreviewData.swift in Sources */,
 				EB5830402BBE6E7000A05309 /* TrendingViewModel.swift in Sources */,

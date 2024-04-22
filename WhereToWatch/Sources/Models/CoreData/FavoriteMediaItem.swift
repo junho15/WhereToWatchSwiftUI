@@ -1,7 +1,7 @@
 import Foundation
 import MovieDatabaseAPI
 
-struct FavoriteMediaItem: Identifiable {
+struct FavoriteMediaItem: Identifiable, Equatable {
     let id: MediaItem.ID
     let mediaType: MediaType
     let registrationDate: Date?
