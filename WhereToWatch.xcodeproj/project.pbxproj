@@ -41,6 +41,7 @@
 		EBEB9E4E2BD6708500D0DEBA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E4D2BD6708500D0DEBA /* FavoritesViewModel.swift */; };
 		EBEB9E502BD67B9B00D0DEBA /* FavoritesSortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E4F2BD67B9B00D0DEBA /* FavoritesSortOption.swift */; };
 		EBEB9E522BD79D6A00D0DEBA /* MockFavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E512BD79D6A00D0DEBA /* MockFavoriteService.swift */; };
+		EBEB9E552BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		EBEB9E4D2BD6708500D0DEBA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		EBEB9E4F2BD67B9B00D0DEBA /* FavoritesSortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSortOption.swift; sourceTree = "<group>"; };
 		EBEB9E512BD79D6A00D0DEBA /* MockFavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteService.swift; sourceTree = "<group>"; };
+		EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				EB58305E2BC1673700A05309 /* CreditsViewModelTests.swift */,
+				EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */,
 				EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */,
 				EB5830672BC9594B00A05309 /* SearchViewModelTests.swift */,
 				EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */,
@@ -438,6 +441,7 @@
 			files = (
 				EB5830562BC017D000A05309 /* MockMovieDatabaseAPIClient.swift in Sources */,
 				EB58304F2BC0164900A05309 /* GenresListFetcherTests.swift in Sources */,
+				EBEB9E552BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift in Sources */,
 				EB5830682BC9594B00A05309 /* SearchViewModelTests.swift in Sources */,
 				EBEB9E522BD79D6A00D0DEBA /* MockFavoriteService.swift in Sources */,
 				EB5830582BC02C6A00A05309 /* TrendingViewModelTests.swift in Sources */,
