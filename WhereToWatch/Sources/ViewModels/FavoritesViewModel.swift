@@ -38,7 +38,7 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
 // MARK: - Methods
 
 extension FavoritesViewModel {
-    func fetchFavorites() throws {
+    func fetchFavorites(sortOption: FavoritesSortOption) throws {
         favoriteMediaItems = try favoriteService.fetch(sortOption: sortOption, offset: nil, limit: nil)
     }
 
@@ -67,9 +67,9 @@ extension FavoritesViewModel {
 private extension FavoritesViewModel {
     func setupSortOption() {
         $sortOption
-            .sink { [weak self] _ in
+            .sink { [weak self] sortOption in
                 guard let self else { return }
-                try? self.fetchFavorites()
+                try? self.fetchFavorites(sortOption: sortOption)
             }
             .store(in: &cancellables)
     }
