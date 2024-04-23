@@ -28,7 +28,6 @@ final class SearchViewModelTests: XCTestCase {
 
     func testFetchMoreMovies() async throws {
         // given
-        let query = "test"
         movieDatabaseAPIClient.movieGenresListResult = PreviewData.genreListData
         movieDatabaseAPIClient.searchMoviesResult = PreviewData.moviePageData
 
@@ -62,7 +61,6 @@ final class SearchViewModelTests: XCTestCase {
 
     func testFetchMoreTVShows() async throws {
         // given
-        let query = "test"
         movieDatabaseAPIClient.tvShowGenresListResult = PreviewData.genreListData
         movieDatabaseAPIClient.searchTVShowsResult = PreviewData.tvShowPageData
 
