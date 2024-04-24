@@ -43,6 +43,7 @@
 		EBEB9E522BD79D6A00D0DEBA /* MockFavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E512BD79D6A00D0DEBA /* MockFavoriteService.swift */; };
 		EBEB9E552BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */; };
 		EBEB9E572BD8D49900D0DEBA /* MediaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */; };
+		EBEB9E592BD946AE00D0DEBA /* MediaDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		EBEB9E512BD79D6A00D0DEBA /* MockFavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteService.swift; sourceTree = "<group>"; };
 		EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
 		EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModel.swift; sourceTree = "<group>"; };
+		EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 				EB58305E2BC1673700A05309 /* CreditsViewModelTests.swift */,
 				EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */,
 				EB58304E2BC0164900A05309 /* GenresListFetcherTests.swift */,
+				EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */,
 				EB5830672BC9594B00A05309 /* SearchViewModelTests.swift */,
 				EB5830632BC5095600A05309 /* SimilarViewModelTests.swift */,
 				EB5830572BC02C6A00A05309 /* TrendingViewModelTests.swift */,
@@ -450,6 +453,7 @@
 				EBEB9E522BD79D6A00D0DEBA /* MockFavoriteService.swift in Sources */,
 				EB5830582BC02C6A00A05309 /* TrendingViewModelTests.swift in Sources */,
 				EB58305F2BC1673700A05309 /* CreditsViewModelTests.swift in Sources */,
+				EBEB9E592BD946AE00D0DEBA /* MediaDetailViewModelTests.swift in Sources */,
 				EB5830642BC5095600A05309 /* SimilarViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
