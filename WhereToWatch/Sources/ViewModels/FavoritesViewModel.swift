@@ -30,7 +30,7 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
         self.favoriteMediaItems = favoriteMediaItems
         self.sortOption = sortOption
 
-        setupSortOption()
+        setUpSortOption()
         setUpFavoritesObserve()
     }
 }
@@ -65,7 +65,7 @@ extension FavoritesViewModel {
 }
 
 private extension FavoritesViewModel {
-    func setupSortOption() {
+    func setUpSortOption() {
         $sortOption
             .sink { [weak self] sortOption in
                 guard let self else { return }

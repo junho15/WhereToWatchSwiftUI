@@ -42,6 +42,7 @@
 		EBEB9E502BD67B9B00D0DEBA /* FavoritesSortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E4F2BD67B9B00D0DEBA /* FavoritesSortOption.swift */; };
 		EBEB9E522BD79D6A00D0DEBA /* MockFavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E512BD79D6A00D0DEBA /* MockFavoriteService.swift */; };
 		EBEB9E552BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */; };
+		EBEB9E572BD8D49900D0DEBA /* MediaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		EBEB9E4F2BD67B9B00D0DEBA /* FavoritesSortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSortOption.swift; sourceTree = "<group>"; };
 		EBEB9E512BD79D6A00D0DEBA /* MockFavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteService.swift; sourceTree = "<group>"; };
 		EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
+		EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				EB5830652BC5393A00A05309 /* SearchViewModel.swift */,
 				EB5830612BC2541D00A05309 /* SimilarViewModel.swift */,
 				EB58303F2BBE6E7000A05309 /* TrendingViewModel.swift */,
+				EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				EB0A63D82BA9B09400B575E2 /* ContentView.swift in Sources */,
 				EB5830362BBBEE4700A05309 /* Date.swift in Sources */,
 				EBEB9E502BD67B9B00D0DEBA /* FavoritesSortOption.swift in Sources */,
+				EBEB9E572BD8D49900D0DEBA /* MediaDetailViewModel.swift in Sources */,
 				EB5830702BCE86CD00A05309 /* FavoriteService.swift in Sources */,
 				EB58305D2BC15DC500A05309 /* CreditItem.swift in Sources */,
 				EB58305B2BC15BBE00A05309 /* CreditsViewModel.swift in Sources */,
