@@ -35,12 +35,12 @@ final class FavoritesViewModelTests: XCTestCase {
     }
 
     @MainActor
-    func testFetchFavorites() throws {
+    func testFetchFavorites() async throws {
         // given
         favoriteService.favorites = TestData.favorites
 
         // when
-        XCTAssertNoThrow(try sut.fetchFavorites(sortOption: .registrationDate))
+        try await sut.fetchFavorites(sortOption: .registrationDate)
 
         // then
         XCTAssertEqual(sut.favoriteMediaItems[0].id, TestData.favorites[0].id)
@@ -48,12 +48,17 @@ final class FavoritesViewModelTests: XCTestCase {
     }
 
     @MainActor
-    func testFetchFavoritesWithError() {
+    func testFetchFavoritesWithError() async {
         // given
         favoriteService.shouldReturnError = true
 
-        // when, then
-        XCTAssertThrowsError(try sut.fetchFavorites(sortOption: .registrationDate))
+        // when
+        do {
+            try await sut.fetchFavorites(sortOption: .registrationDate)
+            XCTFail("Should return error")
+        } catch {
+            // then
+        }
     }
 
     @MainActor
@@ -74,7 +79,7 @@ final class FavoritesViewModelTests: XCTestCase {
     }
 
     @MainActor
-    func testMediaItemWithError() async {
+    func testMediaItemWithError() async throws {
         // given
         let favoriteMediaItemID = TestData.favorites[0].id
         sut.favoriteMediaItems = TestData.favorites
@@ -98,24 +103,17 @@ final class FavoritesViewModelTests: XCTestCase {
         // given
         favoriteService.favorites = TestData.favorites
         let sortOption = FavoritesSortOption.reverseRegistrationDate
-        let expectation = XCTestExpectation(description: "Changing of SortOption")
 
         // when
-        sut.$favoriteMediaItems
-            .dropFirst()
-            .sink { _ in
-                // then
-                XCTAssertEqual(self.favoriteService.sortOption, sortOption)
-                expectation.fulfill()
-            }
-            .store(in: &cancellables)
-
         sut.sortOption = sortOption
-        await fulfillment(of: [expectation], timeout: 1)
+
+        // then
+        try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
+        XCTAssertEqual(self.favoriteService.sortOption, sortOption)
     }
 
     @MainActor
-    func testFavoriteDeleting() {
+    func testFavoriteDeleting() async {
         // given
         favoriteService.favorites = TestData.favorites
         sut.favoriteMediaItems = TestData.favorites
@@ -125,8 +123,9 @@ final class FavoritesViewModelTests: XCTestCase {
         sut.favoriteMediaItems.removeFirst()
 
         // then
-        XCTAssertNotEqual(sut.favoriteMediaItems[0].id, firstItem.id)
-        XCTAssertNotEqual(favoriteService.favorites[0].id, firstItem.id)
+        try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
+        XCTAssertNotEqual(self.sut.favoriteMediaItems[0].id, firstItem.id)
+        XCTAssertNotEqual(self.favoriteService.favorites[0].id, firstItem.id)
     }
 }
 

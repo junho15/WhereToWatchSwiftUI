@@ -16,12 +16,8 @@ final class MediaDetailViewModel: ObservableObject, LocaleRepresentable {
 
     // MARK: Lifecycle
 
-    init(
-        isFavorite: Bool,
-        mediaItem: MediaItem,
-        favoriteService: FavoriteServiceProtocol
-    ) {
-        self.isFavorite = isFavorite
+    init(mediaItem: MediaItem, favoriteService: FavoriteServiceProtocol) async {
+        self.isFavorite = await (try? favoriteService.contains(mediaItem.id)) ?? false
         self.mediaItem = mediaItem
         self.favoriteService = favoriteService
 
@@ -34,18 +30,19 @@ final class MediaDetailViewModel: ObservableObject, LocaleRepresentable {
 private extension MediaDetailViewModel {
     func setUpFavoriteStatus() {
         $isFavorite
-            .dropFirst()
             .sink { [weak self] newFavoriteStatus in
-                guard let self else { return }
+                Task { [weak self] in
+                    guard let self else { return }
 
-                do {
-                    if newFavoriteStatus {
-                        try favoriteService.add(FavoriteMediaItem(mediaItem: mediaItem))
-                    } else {
-                        try favoriteService.remove(mediaItem.id)
+                    do {
+                        if newFavoriteStatus {
+                            try await favoriteService.add(FavoriteMediaItem(mediaItem: mediaItem))
+                        } else {
+                            try await favoriteService.remove(mediaItem.id)
+                        }
+                    } catch {
+                        print(error.localizedDescription)
                     }
-                } catch {
-                    print(error.localizedDescription)
                 }
             }
             .store(in: &cancellables)

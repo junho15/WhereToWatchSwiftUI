@@ -38,8 +38,8 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
 // MARK: - Methods
 
 extension FavoritesViewModel {
-    func fetchFavorites(sortOption: FavoritesSortOption) throws {
-        favoriteMediaItems = try favoriteService.fetch(sortOption: sortOption, offset: nil, limit: nil)
+    func fetchFavorites(sortOption: FavoritesSortOption) async throws {
+        favoriteMediaItems = try await favoriteService.fetch(sortOption: sortOption, offset: nil, limit: nil)
     }
 
     func mediaItem(for id: FavoriteMediaItem.ID) async throws -> MediaItem {
@@ -67,24 +67,34 @@ extension FavoritesViewModel {
 private extension FavoritesViewModel {
     func setUpSortOption() {
         $sortOption
+            .dropFirst()
             .sink { [weak self] sortOption in
-                guard let self else { return }
-                try? self.fetchFavorites(sortOption: sortOption)
+                Task { [weak self] in
+                    guard let self else { return }
+                    try? await self.fetchFavorites(sortOption: sortOption)
+                }
             }
             .store(in: &cancellables)
     }
 
     func setUpFavoritesObserve() {
         $favoriteMediaItems
+            .dropFirst()
             .removeDuplicates()
             .sink { [weak self] items in
                 guard let self else { return }
+                guard items.count < self.favoriteMediaItems.count else { return }
+
                 let currentIDs = Set(items.map { $0.id })
                 let previousIDs = Set(self.favoriteMediaItems.map { $0.id })
 
                 let deletedIDs = previousIDs.subtracting(currentIDs)
+                guard deletedIDs.isEmpty == false else { return }
                 deletedIDs.forEach { id in
-                    try? self.remove(id)
+                    Task { [weak self] in
+                        guard let self else { return }
+                        try? await self.remove(id)
+                    }
                 }
             }
             .store(in: &cancellables)
@@ -94,9 +104,7 @@ private extension FavoritesViewModel {
         return favoriteMediaItems.first(where: { $0.id == id })
     }
 
-    func remove(_ id: FavoriteMediaItem.ID) throws {
-        try favoriteService.remove(id)
-
-        favoriteMediaItems.removeAll(where: { $0.id == id })
+    func remove(_ id: FavoriteMediaItem.ID) async throws {
+        try await favoriteService.remove(id)
     }
 }

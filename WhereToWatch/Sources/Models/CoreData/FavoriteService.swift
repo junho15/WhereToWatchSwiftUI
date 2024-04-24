@@ -1,10 +1,10 @@
 import CoreData
 
 protocol FavoriteServiceProtocol {
-    func contains(_ id: FavoriteMediaItem.ID) throws -> Bool
-    func fetch(sortOption: FavoritesSortOption, offset: Int?, limit: Int?) throws -> [FavoriteMediaItem]
-    func add(_ favoriteMediaItem: FavoriteMediaItem) throws
-    func remove(_ id: FavoriteMediaItem.ID) throws
+    func contains(_ id: FavoriteMediaItem.ID) async throws -> Bool
+    func fetch(sortOption: FavoritesSortOption, offset: Int?, limit: Int?) async throws -> [FavoriteMediaItem]
+    func add(_ favoriteMediaItem: FavoriteMediaItem) async throws
+    func remove(_ id: FavoriteMediaItem.ID) async throws
 }
 
 final class FavoriteService {
@@ -40,14 +40,14 @@ final class FavoriteService {
 }
 
 extension FavoriteService: FavoriteServiceProtocol {
-    func contains(_ id: FavoriteMediaItem.ID) throws -> Bool {
-        let result = try fetch(id: id)
+    func contains(_ id: FavoriteMediaItem.ID) async throws -> Bool {
+        let result = try await fetch(id: id)
         return result.isEmpty == false
     }
 
     func fetch(
         sortOption: FavoritesSortOption = .registrationDate, offset: Int? = nil, limit: Int? = nil
-    ) throws -> [FavoriteMediaItem] {
+    ) async throws -> [FavoriteMediaItem] {
         let request = fetchRequest
         request.sortDescriptors = [sortOption.sortDescriptor]
 
@@ -63,38 +63,40 @@ extension FavoriteService: FavoriteServiceProtocol {
         }
     }
 
-    func add(_ favoriteMediaItem: FavoriteMediaItem) throws {
+    func add(_ favoriteMediaItem: FavoriteMediaItem) async throws {
         let mediaItemEntity = MediaItemEntity(context: context)
         mediaItemEntity.id = Int64(favoriteMediaItem.id)
         mediaItemEntity.mediaTypeText = favoriteMediaItem.mediaType.rawValue
         mediaItemEntity.registrationDate = favoriteMediaItem.registrationDate
 
-        try save()
+        try await save()
     }
 
-    func remove(_ id: FavoriteMediaItem.ID) throws {
-        let result = try fetch(id: id)
+    func remove(_ id: FavoriteMediaItem.ID) async throws {
+        let result = try await fetch(id: id)
         guard let deleted = result.first else { return }
 
-        try delete(item: deleted)
+        try await delete(item: deleted)
     }
+}
 
-    private func fetch(id: Int) throws -> [MediaItemEntity] {
+private extension FavoriteService {
+    func fetch(id: Int) async throws -> [MediaItemEntity] {
         let request = fetchRequest
         request.predicate = NSPredicate(format: Constants.idPredicateFormat, id)
         return try context.fetch(request)
     }
 
-    private func save() throws {
+    func save() async throws {
         guard context.hasChanges else { return }
 
         try context.save()
     }
 
-    private func delete(item: MediaItemEntity) throws {
+    func delete(item: MediaItemEntity) async throws {
         context.delete(item)
 
-        try save()
+        try await save()
     }
 }
 
