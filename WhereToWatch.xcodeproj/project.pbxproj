@@ -44,6 +44,7 @@
 		EBEB9E552BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */; };
 		EBEB9E572BD8D49900D0DEBA /* MediaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */; };
 		EBEB9E592BD946AE00D0DEBA /* MediaDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */; };
+		EBEB9E5D2BDBB51900D0DEBA /* WatchProviderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E5C2BDBB51900D0DEBA /* WatchProviderItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
 		EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModel.swift; sourceTree = "<group>"; };
 		EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModelTests.swift; sourceTree = "<group>"; };
+		EBEB9E5C2BDBB51900D0DEBA /* WatchProviderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 			children = (
 				EB58305C2BC15DC500A05309 /* CreditItem.swift */,
 				EB5830322BBBEC7900A05309 /* MediaItem.swift */,
+				EBEB9E5C2BDBB51900D0DEBA /* WatchProviderItem.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				EB5830662BC5393A00A05309 /* SearchViewModel.swift in Sources */,
 				EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */,
 				EB58303C2BBE684D00A05309 /* MovieDatabaseAPIError.swift in Sources */,
+				EBEB9E5D2BDBB51900D0DEBA /* WatchProviderItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
