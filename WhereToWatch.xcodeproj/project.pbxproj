@@ -44,6 +44,7 @@
 		EBEB9E552BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */; };
 		EBEB9E572BD8D49900D0DEBA /* MediaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */; };
 		EBEB9E592BD946AE00D0DEBA /* MediaDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */; };
+		EBEB9E5B2BDA23DB00D0DEBA /* WatchProviderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E5A2BDA23DB00D0DEBA /* WatchProviderViewModel.swift */; };
 		EBEB9E5D2BDBB51900D0DEBA /* WatchProviderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E5C2BDBB51900D0DEBA /* WatchProviderItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		EBEB9E542BD7C0EE00D0DEBA /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
 		EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModel.swift; sourceTree = "<group>"; };
 		EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModelTests.swift; sourceTree = "<group>"; };
+		EBEB9E5A2BDA23DB00D0DEBA /* WatchProviderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderViewModel.swift; sourceTree = "<group>"; };
 		EBEB9E5C2BDBB51900D0DEBA /* WatchProviderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,10 +199,11 @@
 			children = (
 				EB58305A2BC15BBE00A05309 /* CreditsViewModel.swift */,
 				EBEB9E4D2BD6708500D0DEBA /* FavoritesViewModel.swift */,
+				EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */,
 				EB5830652BC5393A00A05309 /* SearchViewModel.swift */,
 				EB5830612BC2541D00A05309 /* SimilarViewModel.swift */,
 				EB58303F2BBE6E7000A05309 /* TrendingViewModel.swift */,
-				EBEB9E562BD8D49900D0DEBA /* MediaDetailViewModel.swift */,
+				EBEB9E5A2BDA23DB00D0DEBA /* WatchProviderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				EB5830422BBE74CE00A05309 /* LocaleRepresentable.swift in Sources */,
 				EB5830762BCEA7C100A05309 /* FavoriteMediaItem.swift in Sources */,
 				EB5830662BC5393A00A05309 /* SearchViewModel.swift in Sources */,
+				EBEB9E5B2BDA23DB00D0DEBA /* WatchProviderViewModel.swift in Sources */,
 				EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */,
 				EB58303C2BBE684D00A05309 /* MovieDatabaseAPIError.swift in Sources */,
 				EBEB9E5D2BDBB51900D0DEBA /* WatchProviderItem.swift in Sources */,
