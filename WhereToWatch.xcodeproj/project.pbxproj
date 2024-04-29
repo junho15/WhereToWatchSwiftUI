@@ -46,6 +46,7 @@
 		EBEB9E592BD946AE00D0DEBA /* MediaDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */; };
 		EBEB9E5B2BDA23DB00D0DEBA /* WatchProviderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E5A2BDA23DB00D0DEBA /* WatchProviderViewModel.swift */; };
 		EBEB9E5D2BDBB51900D0DEBA /* WatchProviderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E5C2BDBB51900D0DEBA /* WatchProviderItem.swift */; };
+		EBEB9E5F2BDF6EF200D0DEBA /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E5E2BDF6EF200D0DEBA /* AsyncImageView.swift */; };
 		EBEB9E632BDF8B8B00D0DEBA /* ImageURLRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E622BDF8B8B00D0DEBA /* ImageURLRepresentable.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModelTests.swift; sourceTree = "<group>"; };
 		EBEB9E5A2BDA23DB00D0DEBA /* WatchProviderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderViewModel.swift; sourceTree = "<group>"; };
 		EBEB9E5C2BDBB51900D0DEBA /* WatchProviderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderItem.swift; sourceTree = "<group>"; };
+		EBEB9E5E2BDF6EF200D0DEBA /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		EBEB9E622BDF8B8B00D0DEBA /* ImageURLRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURLRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				EB0A63D72BA9B09400B575E2 /* ContentView.swift */,
+				EBEB9E5E2BDF6EF200D0DEBA /* AsyncImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				EB5830422BBE74CE00A05309 /* LocaleRepresentable.swift in Sources */,
 				EB5830762BCEA7C100A05309 /* FavoriteMediaItem.swift in Sources */,
 				EB5830662BC5393A00A05309 /* SearchViewModel.swift in Sources */,
+				EBEB9E5F2BDF6EF200D0DEBA /* AsyncImageView.swift in Sources */,
 				EBEB9E5B2BDA23DB00D0DEBA /* WatchProviderViewModel.swift in Sources */,
 				EBEB9E632BDF8B8B00D0DEBA /* ImageURLRepresentable.swift in Sources */,
 				EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */,

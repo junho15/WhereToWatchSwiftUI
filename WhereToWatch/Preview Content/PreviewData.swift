@@ -12,6 +12,10 @@ enum PreviewData {
     static let tvShowPageData: Page<TVShow> = load("TVShowPageData")
     static let watchProviderResultData: WatchProviderResult = load("WatchProviderResultData")
 
+    static var mediaItem: MediaItem {
+        MediaItem(media: movieDetailData, genreList: genreListData)
+    }
+
     private static var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
