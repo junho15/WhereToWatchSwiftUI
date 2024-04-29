@@ -1,3 +1,4 @@
+import Foundation
 import MovieDatabaseAPI
 
 struct WatchProviderItem: Identifiable {
@@ -18,5 +19,11 @@ struct WatchProviderItem: Identifiable {
         self.logoPath = watchProvider.logoPath
         self.providerName = watchProvider.providerName
         self.displayPriority = watchProvider.displayPriority
+    }
+}
+
+extension WatchProviderItem: ImageURLRepresentable {
+    var logoURL: URL? {
+        imageURL(path: logoPath, size: .original)
     }
 }

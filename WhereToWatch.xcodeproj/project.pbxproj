@@ -46,6 +46,7 @@
 		EBEB9E592BD946AE00D0DEBA /* MediaDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */; };
 		EBEB9E5B2BDA23DB00D0DEBA /* WatchProviderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E5A2BDA23DB00D0DEBA /* WatchProviderViewModel.swift */; };
 		EBEB9E5D2BDBB51900D0DEBA /* WatchProviderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E5C2BDBB51900D0DEBA /* WatchProviderItem.swift */; };
+		EBEB9E632BDF8B8B00D0DEBA /* ImageURLRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E622BDF8B8B00D0DEBA /* ImageURLRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		EBEB9E582BD946AE00D0DEBA /* MediaDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModelTests.swift; sourceTree = "<group>"; };
 		EBEB9E5A2BDA23DB00D0DEBA /* WatchProviderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderViewModel.swift; sourceTree = "<group>"; };
 		EBEB9E5C2BDBB51900D0DEBA /* WatchProviderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderItem.swift; sourceTree = "<group>"; };
+		EBEB9E622BDF8B8B00D0DEBA /* ImageURLRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURLRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				EB5830432BBED97F00A05309 /* GenresListFetcher.swift */,
+				EBEB9E622BDF8B8B00D0DEBA /* ImageURLRepresentable.swift */,
 				EB5830412BBE74CE00A05309 /* LocaleRepresentable.swift */,
 				EB0A640C2BAB026800B575E2 /* Secrets.swift */,
 			);
@@ -444,6 +447,7 @@
 				EB5830762BCEA7C100A05309 /* FavoriteMediaItem.swift in Sources */,
 				EB5830662BC5393A00A05309 /* SearchViewModel.swift in Sources */,
 				EBEB9E5B2BDA23DB00D0DEBA /* WatchProviderViewModel.swift in Sources */,
+				EBEB9E632BDF8B8B00D0DEBA /* ImageURLRepresentable.swift in Sources */,
 				EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */,
 				EB58303C2BBE684D00A05309 /* MovieDatabaseAPIError.swift in Sources */,
 				EBEB9E5D2BDBB51900D0DEBA /* WatchProviderItem.swift in Sources */,

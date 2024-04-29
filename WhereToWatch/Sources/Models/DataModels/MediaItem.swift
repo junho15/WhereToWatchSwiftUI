@@ -1,3 +1,4 @@
+import Foundation
 import MovieDatabaseAPI
 
 struct MediaItem: Identifiable {
@@ -41,5 +42,15 @@ struct MediaItem: Identifiable {
         self.genre = genreList?.genres.compactMap { genre in
             return genreIds.contains(genre.id) ? genre.name : nil
         }.joined(separator: ", ")
+    }
+}
+
+extension MediaItem: ImageURLRepresentable {
+    var posterURL: URL? {
+        return imageURL(path: posterPath, size: .w500)
+    }
+
+    var backdropURL: URL? {
+        imageURL(path: backdropPath, size: .w500)
     }
 }

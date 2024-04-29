@@ -21,3 +21,9 @@ struct CreditItem: Identifiable {
         self.profilePath = credit.profilePath
     }
 }
+
+extension CreditItem: ImageURLRepresentable {
+    var profileURL: URL? {
+        imageURL(path: profilePath, size: .w500)
+    }
+}
