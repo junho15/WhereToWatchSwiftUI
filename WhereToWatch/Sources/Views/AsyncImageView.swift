@@ -14,6 +14,8 @@ struct AsyncImageView: View {
                     .scaledToFit()
             case .failure:
                 Image("Empty")
+                    .resizable()
+                    .scaledToFit()
             @unknown default:
                 EmptyView()
             }
