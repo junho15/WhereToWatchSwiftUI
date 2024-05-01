@@ -50,6 +50,7 @@
 		EBEB9E632BDF8B8B00D0DEBA /* ImageURLRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E622BDF8B8B00D0DEBA /* ImageURLRepresentable.swift */; };
 		EBEB9E652BDFA69600D0DEBA /* MediaDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E642BDFA69600D0DEBA /* MediaDetailHeaderView.swift */; };
 		EBEB9E672BE0BA5C00D0DEBA /* MediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E662BE0BA5C00D0DEBA /* MediaItemView.swift */; };
+		EBEB9E692BE1D14200D0DEBA /* MediaItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E682BE1D14200D0DEBA /* MediaItemsCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		EBEB9E622BDF8B8B00D0DEBA /* ImageURLRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURLRepresentable.swift; sourceTree = "<group>"; };
 		EBEB9E642BDFA69600D0DEBA /* MediaDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailHeaderView.swift; sourceTree = "<group>"; };
 		EBEB9E662BE0BA5C00D0DEBA /* MediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemView.swift; sourceTree = "<group>"; };
+		EBEB9E682BE1D14200D0DEBA /* MediaItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemsCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				EBEB9E5E2BDF6EF200D0DEBA /* AsyncImageView.swift */,
 				EB0A63D72BA9B09400B575E2 /* ContentView.swift */,
 				EBEB9E642BDFA69600D0DEBA /* MediaDetailHeaderView.swift */,
+				EBEB9E682BE1D14200D0DEBA /* MediaItemsCollectionView.swift */,
 				EBEB9E662BE0BA5C00D0DEBA /* MediaItemView.swift */,
 			);
 			path = Views;
@@ -444,6 +447,7 @@
 				EB58305D2BC15DC500A05309 /* CreditItem.swift in Sources */,
 				EB58305B2BC15BBE00A05309 /* CreditsViewModel.swift in Sources */,
 				EB58306C2BCE7E2C00A05309 /* Model.xcdatamodeld in Sources */,
+				EBEB9E692BE1D14200D0DEBA /* MediaItemsCollectionView.swift in Sources */,
 				EB5830442BBED97F00A05309 /* GenresListFetcher.swift in Sources */,
 				EB5830332BBBEC7900A05309 /* MediaItem.swift in Sources */,
 				EB5830732BCE88F900A05309 /* MediaItemEntity+CoreDataClass.swift in Sources */,

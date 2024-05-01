@@ -16,6 +16,12 @@ enum PreviewData {
         MediaItem(media: movieDetailData, genreList: genreListData)
     }
 
+    static var mediaItems: [MediaItem] {
+        moviePageData.results.map { movie in
+            MediaItem(media: movie, genreList: genreListData)
+        }
+    }
+
     private static var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
