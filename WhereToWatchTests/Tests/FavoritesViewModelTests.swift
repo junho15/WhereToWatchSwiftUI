@@ -37,14 +37,15 @@ final class FavoritesViewModelTests: XCTestCase {
     @MainActor
     func testFetchFavorites() async throws {
         // given
-        favoriteService.favorites = TestData.favorites
+        movieDatabaseAPIClient.movieGenresListResult = TestData.movieGenreList
+        movieDatabaseAPIClient.movieDetailResult = TestData.movieDetailData
+        favoriteService.favorites = [TestData.favoriteMediaItem]
 
         // when
         try await sut.fetchFavorites(sortOption: .registrationDate)
 
         // then
-        XCTAssertEqual(sut.favoriteMediaItems[0].id, TestData.favorites[0].id)
-        XCTAssertEqual(sut.favoriteMediaItems.count, TestData.favorites.count)
+        XCTAssertEqual(sut.mediaItems[0].id, TestData.mediaItems[0].id)
     }
 
     @MainActor
@@ -62,46 +63,11 @@ final class FavoritesViewModelTests: XCTestCase {
     }
 
     @MainActor
-    func testMediaItem() async throws {
-        // given
-        let favoriteMediaItemID = TestData.favorites[0].id
-        let mediaItem = TestData.movies[0]
-        sut.favoriteMediaItems = TestData.favorites
-        movieDatabaseAPIClient.movieGenresListResult = TestData.movieGenreList
-        movieDatabaseAPIClient.movieDetailResult = TestData.movies[0]
-
-        // when
-        let result = try await sut.mediaItem(for: favoriteMediaItemID)
-
-        // then
-        XCTAssertEqual(result.id, mediaItem.id)
-        XCTAssertEqual(result.mediaType, mediaItem.mediaType)
-    }
-
-    @MainActor
-    func testMediaItemWithError() async throws {
-        // given
-        let favoriteMediaItemID = TestData.favorites[0].id
-        sut.favoriteMediaItems = TestData.favorites
-        movieDatabaseAPIClient.movieGenresListResult = TestData.movieGenreList
-        movieDatabaseAPIClient.movieDetailError = MovieDatabaseAPIError.badStatus
-
-        // when
-        do {
-            _ = try await sut.mediaItem(for: favoriteMediaItemID)
-        } catch {
-            if let error = error as? MovieDatabaseAPIError, case .badStatus = error {
-                // then
-            } else {
-                XCTFail("Should return MovieDatabaseAPIError.badStatus")
-            }
-        }
-    }
-
-    @MainActor
     func testSortOptionChanging() async {
         // given
-        favoriteService.favorites = TestData.favorites
+        movieDatabaseAPIClient.movieGenresListResult = TestData.movieGenreList
+        movieDatabaseAPIClient.movieDetailResult = TestData.movieDetailData
+        favoriteService.favorites = [TestData.favoriteMediaItem]
         let sortOption = FavoritesSortOption.reverseRegistrationDate
 
         // when
@@ -116,15 +82,15 @@ final class FavoritesViewModelTests: XCTestCase {
     func testFavoriteDeleting() async {
         // given
         favoriteService.favorites = TestData.favorites
-        sut.favoriteMediaItems = TestData.favorites
-        let firstItem = TestData.favorites[0]
+        sut.mediaItems = TestData.mediaItems
+        let firstItem = TestData.mediaItems[0]
 
         // when
-        sut.favoriteMediaItems.removeFirst()
+        sut.mediaItems.removeFirst()
 
         // then
         try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
-        XCTAssertNotEqual(self.sut.favoriteMediaItems[0].id, firstItem.id)
+        XCTAssertNotEqual(self.sut.mediaItems[0].id, firstItem.id)
         XCTAssertNotEqual(self.favoriteService.favorites[0].id, firstItem.id)
     }
 }
@@ -133,8 +99,15 @@ private extension FavoritesViewModelTests {
     enum TestData {
         static let movies = PreviewData.moviePageData.results
         static let movieGenreList = PreviewData.genreListData
-        static let favorites = movies.map { movie in
-            FavoriteMediaItem(mediaItem: MediaItem(media: movie, genreList: movieGenreList))
+        static let movieDetailData = PreviewData.movieDetailData
+        static let favoriteMediaItem = {
+            return FavoriteMediaItem(mediaItem: MediaItem(media: movieDetailData, genreList: movieGenreList))
+        }()
+        static let mediaItems = movies.map { movie in
+            MediaItem(media: movie, genreList: movieGenreList)
+        }
+        static let favorites = mediaItems.map { mediaItem in
+            FavoriteMediaItem(mediaItem: mediaItem)
         }
     }
 }
