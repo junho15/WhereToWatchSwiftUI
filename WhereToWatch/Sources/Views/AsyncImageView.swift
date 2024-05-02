@@ -7,7 +7,9 @@ struct AsyncImageView: View {
         AsyncImage(url: url) { phase in
             switch phase {
             case .empty:
-                ProgressView()
+                Image("Empty")
+                    .resizable()
+                    .scaledToFit()
             case .success(let image):
                 image
                     .resizable()
