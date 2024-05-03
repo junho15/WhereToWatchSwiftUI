@@ -52,6 +52,7 @@
 		EBEB9E672BE0BA5C00D0DEBA /* MediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E662BE0BA5C00D0DEBA /* MediaItemView.swift */; };
 		EBEB9E692BE1D14200D0DEBA /* MediaItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E682BE1D14200D0DEBA /* MediaItemsCollectionView.swift */; };
 		EBEB9E6B2BE365C300D0DEBA /* MediaItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E6A2BE365C300D0DEBA /* MediaItemsListView.swift */; };
+		EBEB9E722BE5070800D0DEBA /* SimilarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		EBEB9E662BE0BA5C00D0DEBA /* MediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemView.swift; sourceTree = "<group>"; };
 		EBEB9E682BE1D14200D0DEBA /* MediaItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemsCollectionView.swift; sourceTree = "<group>"; };
 		EBEB9E6A2BE365C300D0DEBA /* MediaItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemsListView.swift; sourceTree = "<group>"; };
+		EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 		EBEB9E6F2BE4C92000D0DEBA /* SimilarItemViews */ = {
 			isa = PBXGroup;
 			children = (
+				EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */,
 			);
 			path = SimilarItemViews;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				EBEB9E4E2BD6708500D0DEBA /* FavoritesViewModel.swift in Sources */,
 				EB0A63D62BA9B09400B575E2 /* WhereToWatchApp.swift in Sources */,
 				EB58303A2BBD1FF500A05309 /* PreviewData.swift in Sources */,
+				EBEB9E722BE5070800D0DEBA /* SimilarItemView.swift in Sources */,
 				EB5830402BBE6E7000A05309 /* TrendingViewModel.swift in Sources */,
 				EB58303E2BBE68BB00A05309 /* WatchProviderType.swift in Sources */,
 				EB5830422BBE74CE00A05309 /* LocaleRepresentable.swift in Sources */,

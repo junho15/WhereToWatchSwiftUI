@@ -55,7 +55,7 @@ extension MediaDetailHeaderView {
         static let cornerRadius = CGFloat(10)
         static let backdropRatio = CGFloat(281)/CGFloat(500)
         static let posterWidthRatio = 0.2
-        static let posterRatio = CGFloat(2)/CGFloat(3)
+        static let posterRatio = 1/1.3
     }
 }
 

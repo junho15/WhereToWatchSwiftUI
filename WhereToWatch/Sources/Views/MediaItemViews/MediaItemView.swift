@@ -27,7 +27,7 @@ struct MediaItemView: View {
 
                 Spacer()
             }
-            .lineLimit(2)
+            .lineLimit(Constants.textLineLimit)
             .frame(maxWidth: .infinity, alignment: .topLeading)
         }
         .padding(Constants.spacing)
@@ -38,7 +38,8 @@ struct MediaItemView: View {
 extension MediaItemView {
     private enum Constants {
         static let spacing = CGFloat(10)
-        static let imageViewRatio = CGFloat(2)/CGFloat(3)
+        static let imageViewRatio = 1/1.3
+        static let textLineLimit = 2
     }
 }
 
