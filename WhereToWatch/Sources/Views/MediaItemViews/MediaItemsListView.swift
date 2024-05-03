@@ -4,6 +4,7 @@ struct MediaItemsListView: View {
     @Binding var mediaItems: [MediaItem]
     @Binding var selectedMediaItem: MediaItem?
     let enableDelete: Bool
+    var onReachEnd: (() -> Void)?
 
     var body: some View {
         List {
@@ -13,6 +14,11 @@ struct MediaItemsListView: View {
                     .contentShape(Rectangle())
                     .onTapGesture {
                         selectedMediaItem = mediaItem
+                    }
+                    .onAppear {
+                        if mediaItem == mediaItems.last {
+                            onReachEnd?()
+                        }
                     }
             }
             .onDelete(perform: enableDelete ? deleteItem : nil)
@@ -40,6 +46,9 @@ extension MediaItemsListView {
     return MediaItemsListView(
         mediaItems: $mediaItems,
         selectedMediaItem: $selectedMediaItem,
-        enableDelete: true
+        enableDelete: true,
+        onReachEnd: {
+            print("Reach End!")
+        }
     )
 }

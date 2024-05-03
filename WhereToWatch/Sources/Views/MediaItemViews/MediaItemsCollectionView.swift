@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct MediaItemsCollectionView: View {
-    let mediaItems: [MediaItem]
     @Binding var selectedMediaItem: MediaItem?
+    let mediaItems: [MediaItem]
+    var onReachEnd: (() -> Void)?
 
     var body: some View {
         GeometryReader { geometry in
@@ -17,6 +18,11 @@ struct MediaItemsCollectionView: View {
                             .contentShape(Rectangle())
                             .onTapGesture {
                                 selectedMediaItem = mediaItem
+                            }
+                            .onAppear {
+                                if mediaItem == mediaItems.last {
+                                    onReachEnd?()
+                                }
                             }
                     }
                 }
@@ -36,7 +42,13 @@ extension MediaItemsCollectionView {
 #Preview {
     @State var selectedMediaItem: MediaItem?
 
-    return MediaItemsCollectionView(mediaItems: PreviewData.mediaItems, selectedMediaItem: $selectedMediaItem)
+    return MediaItemsCollectionView(
+        selectedMediaItem: $selectedMediaItem,
+        mediaItems: PreviewData.mediaItems,
+        onReachEnd: {
+            print("Reach End!")
+        }
+    )
         .border(.blue)
         .frame(width: .infinity, height: 400)
 }
