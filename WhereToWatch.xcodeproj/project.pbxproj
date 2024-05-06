@@ -54,6 +54,7 @@
 		EBEB9E6B2BE365C300D0DEBA /* MediaItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E6A2BE365C300D0DEBA /* MediaItemsListView.swift */; };
 		EBEB9E722BE5070800D0DEBA /* SimilarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */; };
 		EBEB9E742BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E732BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift */; };
+		EBEB9E762BE8D11700D0DEBA /* CreditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E752BE8D11700D0DEBA /* CreditItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		EBEB9E6A2BE365C300D0DEBA /* MediaItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemsListView.swift; sourceTree = "<group>"; };
 		EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarItemView.swift; sourceTree = "<group>"; };
 		EBEB9E732BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarItemsCollectionView.swift; sourceTree = "<group>"; };
+		EBEB9E752BE8D11700D0DEBA /* CreditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +336,7 @@
 		EBEB9E6E2BE4C91100D0DEBA /* CreditItemViews */ = {
 			isa = PBXGroup;
 			children = (
+				EBEB9E752BE8D11700D0DEBA /* CreditItemView.swift */,
 			);
 			path = CreditItemViews;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				EB5830742BCE88F900A05309 /* MediaItemEntity+CoreDataProperties.swift in Sources */,
 				EB0A640D2BAB026800B575E2 /* Secrets.swift in Sources */,
 				EBEB9E4E2BD6708500D0DEBA /* FavoritesViewModel.swift in Sources */,
+				EBEB9E762BE8D11700D0DEBA /* CreditItemView.swift in Sources */,
 				EB0A63D62BA9B09400B575E2 /* WhereToWatchApp.swift in Sources */,
 				EB58303A2BBD1FF500A05309 /* PreviewData.swift in Sources */,
 				EBEB9E722BE5070800D0DEBA /* SimilarItemView.swift in Sources */,
