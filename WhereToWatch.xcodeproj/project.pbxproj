@@ -55,6 +55,7 @@
 		EBEB9E722BE5070800D0DEBA /* SimilarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */; };
 		EBEB9E742BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E732BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift */; };
 		EBEB9E762BE8D11700D0DEBA /* CreditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E752BE8D11700D0DEBA /* CreditItemView.swift */; };
+		EBEB9E782BE90CB500D0DEBA /* CreditItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E772BE90CB500D0DEBA /* CreditItemsCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarItemView.swift; sourceTree = "<group>"; };
 		EBEB9E732BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarItemsCollectionView.swift; sourceTree = "<group>"; };
 		EBEB9E752BE8D11700D0DEBA /* CreditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditItemView.swift; sourceTree = "<group>"; };
+		EBEB9E772BE90CB500D0DEBA /* CreditItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditItemsCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 		EBEB9E6E2BE4C91100D0DEBA /* CreditItemViews */ = {
 			isa = PBXGroup;
 			children = (
+				EBEB9E772BE90CB500D0DEBA /* CreditItemsCollectionView.swift */,
 				EBEB9E752BE8D11700D0DEBA /* CreditItemView.swift */,
 			);
 			path = CreditItemViews;
@@ -490,6 +493,7 @@
 			files = (
 				EBEB9E652BDFA69600D0DEBA /* MediaDetailHeaderView.swift in Sources */,
 				EB5830382BBBF3CE00A05309 /* MediaType.swift in Sources */,
+				EBEB9E782BE90CB500D0DEBA /* CreditItemsCollectionView.swift in Sources */,
 				EBEB9E672BE0BA5C00D0DEBA /* MediaItemView.swift in Sources */,
 				EB0A63D82BA9B09400B575E2 /* ContentView.swift in Sources */,
 				EB5830362BBBEE4700A05309 /* Date.swift in Sources */,
