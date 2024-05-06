@@ -53,6 +53,7 @@
 		EBEB9E692BE1D14200D0DEBA /* MediaItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E682BE1D14200D0DEBA /* MediaItemsCollectionView.swift */; };
 		EBEB9E6B2BE365C300D0DEBA /* MediaItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E6A2BE365C300D0DEBA /* MediaItemsListView.swift */; };
 		EBEB9E722BE5070800D0DEBA /* SimilarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */; };
+		EBEB9E742BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E732BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		EBEB9E682BE1D14200D0DEBA /* MediaItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemsCollectionView.swift; sourceTree = "<group>"; };
 		EBEB9E6A2BE365C300D0DEBA /* MediaItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemsListView.swift; sourceTree = "<group>"; };
 		EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarItemView.swift; sourceTree = "<group>"; };
+		EBEB9E732BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarItemsCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +341,7 @@
 		EBEB9E6F2BE4C92000D0DEBA /* SimilarItemViews */ = {
 			isa = PBXGroup;
 			children = (
+				EBEB9E732BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift */,
 				EBEB9E712BE5070700D0DEBA /* SimilarItemView.swift */,
 			);
 			path = SimilarItemViews;
@@ -512,6 +515,7 @@
 				EBEB9E5F2BDF6EF200D0DEBA /* AsyncImageView.swift in Sources */,
 				EBEB9E5B2BDA23DB00D0DEBA /* WatchProviderViewModel.swift in Sources */,
 				EBEB9E632BDF8B8B00D0DEBA /* ImageURLRepresentable.swift in Sources */,
+				EBEB9E742BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift in Sources */,
 				EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */,
 				EB58303C2BBE684D00A05309 /* MovieDatabaseAPIError.swift in Sources */,
 				EBEB9E5D2BDBB51900D0DEBA /* WatchProviderItem.swift in Sources */,

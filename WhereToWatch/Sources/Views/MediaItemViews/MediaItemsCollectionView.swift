@@ -49,6 +49,6 @@ extension MediaItemsCollectionView {
             print("Reach End!")
         }
     )
-        .border(.blue)
-        .frame(width: .infinity, height: 400)
+    .border(.blue)
+    .frame(width: .infinity, height: 400)
 }
