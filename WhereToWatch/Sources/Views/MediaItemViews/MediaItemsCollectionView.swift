@@ -3,7 +3,17 @@ import SwiftUI
 struct MediaItemsCollectionView: View {
     @Binding var selectedMediaItem: MediaItem?
     let mediaItems: [MediaItem]
-    var onReachEnd: (() -> Void)?
+    let onReachEnd: (() -> Void)?
+
+    init(
+        selectedMediaItem: Binding<MediaItem?>,
+        mediaItems: [MediaItem],
+        onReachEnd: (() -> Void)? = nil
+    ) {
+        self._selectedMediaItem = selectedMediaItem
+        self.mediaItems = mediaItems
+        self.onReachEnd = onReachEnd
+    }
 
     var body: some View {
         GeometryReader { geometry in

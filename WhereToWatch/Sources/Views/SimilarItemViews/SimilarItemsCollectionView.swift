@@ -3,24 +3,35 @@ import SwiftUI
 struct SimilarItemsCollectionView: View {
     @Binding var selectedSimilarItem: MediaItem?
     let similarItems: [MediaItem]
-    var onReachEnd: (() -> Void)?
+    let itemHeight: CGFloat
+    let onReachEnd: (() -> Void)?
+
+    init(
+        selectedSimilarItem: Binding<MediaItem?>,
+        similarItems: [MediaItem],
+        itemHeight: CGFloat = Constants.itemHeight,
+        onReachEnd: (() -> Void)? = nil
+    ) {
+        self._selectedSimilarItem = selectedSimilarItem
+        self.similarItems = similarItems
+        self.itemHeight = itemHeight
+        self.onReachEnd = onReachEnd
+    }
 
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHGrid(rows: [
-                    GridItem()
-                ], spacing: Constants.spacing) {
+                LazyHStack(spacing: Constants.spacing) {
                     ForEach(similarItems) { similarItem in
                         SimilarItemView(similarItem: similarItem)
                             .padding(Constants.itemPadding)
-                            .frame(width: geometry.size.width * Constants.itemWidthRatio, height: Constants.itemHeight)
+                            .frame(width: geometry.size.width * Constants.itemWidthRatio, height: itemHeight)
                             .contentShape(Rectangle())
                             .onTapGesture {
                                 selectedSimilarItem = similarItem
                             }
                             .onAppear {
-                                if similarItem == similarItems.last  {
+                                if similarItem == similarItems.last {
                                     onReachEnd?()
                                 }
                             }

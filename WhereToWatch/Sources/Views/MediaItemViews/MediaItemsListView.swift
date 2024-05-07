@@ -4,7 +4,19 @@ struct MediaItemsListView: View {
     @Binding var mediaItems: [MediaItem]
     @Binding var selectedMediaItem: MediaItem?
     let enableDelete: Bool
-    var onReachEnd: (() -> Void)?
+    let onReachEnd: (() -> Void)?
+
+    init(
+        mediaItems: Binding<[MediaItem]>,
+        selectedMediaItem: Binding<MediaItem?>,
+        enableDelete: Bool,
+        onReachEnd: (() -> Void)? = nil
+    ) {
+        self._mediaItems = mediaItems
+        self._selectedMediaItem = selectedMediaItem
+        self.enableDelete = enableDelete
+        self.onReachEnd = onReachEnd
+    }
 
     var body: some View {
         List {
