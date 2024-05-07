@@ -22,6 +22,12 @@ enum PreviewData {
         }
     }
 
+    static var watchProviderItems: [WatchProviderItem] {
+        watchProviderResultData.results!["US"]!.results[WatchProviderType.buy]!.map {
+            WatchProviderItem(watchProvider: $0)
+        }
+    }
+
     private static var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
