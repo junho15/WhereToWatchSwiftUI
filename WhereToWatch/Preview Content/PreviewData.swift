@@ -12,6 +12,10 @@ enum PreviewData {
     static let tvShowPageData: Page<TVShow> = load("TVShowPageData")
     static let watchProviderResultData: WatchProviderResult = load("WatchProviderResultData")
 
+    static let movieDatabaseAPIClient = MovieDatabaseAPIClient(apiKey: Secrets.apiKey)
+    static let genresListFetcher = GenresListFetcher(movieDatabaseAPIClient: movieDatabaseAPIClient)
+    static let favoriteService = FavoriteService.shared
+
     static var mediaItem: MediaItem {
         MediaItem(media: movieDetailData, genreList: genreListData)
     }
@@ -26,6 +30,71 @@ enum PreviewData {
         watchProviderResultData.results!["US"]!.results[WatchProviderType.buy]!.map {
             WatchProviderItem(watchProvider: $0)
         }
+    }
+
+    @MainActor
+    static var creditsViewModel: CreditsViewModel {
+        CreditsViewModel(
+            movieDatabaseAPIClient: movieDatabaseAPIClient,
+            creditItems: PreviewData.creditsData.cast.map { CreditItem(credit: $0) }
+        )
+    }
+
+    @MainActor
+    static var favoritesViewModel: FavoritesViewModel {
+        FavoritesViewModel(
+            movieDatabaseAPIClient: movieDatabaseAPIClient,
+            genresListFetcher: genresListFetcher,
+            favoriteService: favoriteService,
+            mediaItems: mediaItems,
+            sortOption: .registrationDate
+        )
+    }
+
+    @MainActor
+    static var searchViewModel: SearchViewModel {
+        SearchViewModel(
+            movieDatabaseAPIClient: movieDatabaseAPIClient,
+            genresListFetcher: genresListFetcher,
+            searchText: "",
+            movieMediaItems: mediaItems,
+            tvShowMediaItems: mediaItems)
+    }
+
+    @MainActor
+    static var similarViewModel: SimilarViewModel {
+        SimilarViewModel(
+            mediaItem: mediaItem,
+            movieDatabaseAPIClient: movieDatabaseAPIClient,
+            genresListFetcher: genresListFetcher,
+            similarMediaItem: mediaItems
+        )
+    }
+
+    @MainActor
+    static var defaultWatchProviderViewModel: WatchProviderViewModel {
+        WatchProviderViewModel(
+            mediaItem: PreviewData.mediaItem,
+            movieDatabaseAPIClient: PreviewData.movieDatabaseAPIClient,
+            flatrateItems: PreviewData.watchProviderItems,
+            buyItems: PreviewData.watchProviderItems,
+            adsItems: PreviewData.watchProviderItems,
+            rentItems: [],
+            freeItems: []
+        )
+    }
+
+    @MainActor
+    static var emptyWatchProviderViewModel: WatchProviderViewModel {
+        WatchProviderViewModel(
+            mediaItem: PreviewData.mediaItem,
+            movieDatabaseAPIClient: PreviewData.movieDatabaseAPIClient,
+            flatrateItems: [],
+            buyItems: [],
+            adsItems: [],
+            rentItems: [],
+            freeItems: []
+        )
     }
 
     private static var decoder: JSONDecoder {
