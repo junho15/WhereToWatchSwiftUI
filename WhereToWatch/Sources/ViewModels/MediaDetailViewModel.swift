@@ -7,7 +7,7 @@ final class MediaDetailViewModel: ObservableObject, LocaleRepresentable {
 
     // MARK: Properties
 
-    @Published var isFavorite: Bool
+    @Published var isFavorite: Bool?
 
     let mediaItem: MediaItem
 
@@ -16,12 +16,14 @@ final class MediaDetailViewModel: ObservableObject, LocaleRepresentable {
 
     // MARK: Lifecycle
 
-    init(mediaItem: MediaItem, favoriteService: FavoriteServiceProtocol) async {
-        self.isFavorite = await (try? favoriteService.contains(mediaItem.id)) ?? false
+    init(mediaItem: MediaItem, favoriteService: FavoriteServiceProtocol) {
         self.mediaItem = mediaItem
         self.favoriteService = favoriteService
 
-        setUpFavoriteStatus()
+        Task {
+            self.isFavorite = try? await favoriteService.contains(mediaItem.id)
+            setUpFavoriteStatus()
+        }
     }
 }
 
@@ -30,9 +32,11 @@ final class MediaDetailViewModel: ObservableObject, LocaleRepresentable {
 private extension MediaDetailViewModel {
     func setUpFavoriteStatus() {
         $isFavorite
+            .dropFirst()
             .sink { [weak self] newFavoriteStatus in
                 Task { [weak self] in
-                    guard let self else { return }
+                    guard let self, let newFavoriteStatus else { return }
+                    print(newFavoriteStatus)
 
                     do {
                         if newFavoriteStatus {

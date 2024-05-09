@@ -30,17 +30,19 @@ final class MediaDetailViewModelTests: XCTestCase {
         favoriteService.favorites = [FavoriteMediaItem(mediaItem: TestData.mediaItem)]
 
         // when
-        sut = await MediaDetailViewModel(mediaItem: TestData.mediaItem, favoriteService: favoriteService)
+        sut = MediaDetailViewModel(mediaItem: TestData.mediaItem, favoriteService: favoriteService)
 
         // then
-        XCTAssertTrue(sut.isFavorite)
+        try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
+        XCTAssertTrue(sut.isFavorite ?? false)
     }
 
     @MainActor
     func testAddingFavorite() async {
         // given
         favoriteService.favorites = []
-        sut = await MediaDetailViewModel(mediaItem: TestData.mediaItem, favoriteService: favoriteService)
+        sut = MediaDetailViewModel(mediaItem: TestData.mediaItem, favoriteService: favoriteService)
+        try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
 
         // when
         sut.isFavorite = true
@@ -54,7 +56,8 @@ final class MediaDetailViewModelTests: XCTestCase {
     func testRemovingFavorite() async {
         // given
         favoriteService.favorites = [FavoriteMediaItem(mediaItem: TestData.mediaItem)]
-        sut = await MediaDetailViewModel(mediaItem: TestData.mediaItem, favoriteService: favoriteService)
+        sut = MediaDetailViewModel(mediaItem: TestData.mediaItem, favoriteService: favoriteService)
+        try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
 
         // when
         sut.isFavorite = false
