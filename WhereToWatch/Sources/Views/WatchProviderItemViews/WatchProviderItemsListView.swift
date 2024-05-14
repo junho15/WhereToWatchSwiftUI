@@ -19,7 +19,8 @@ struct WatchProviderItemsListView: View {
         if notEmptyItemsCount == .zero {
             emptyItemHeight
         } else {
-            itemHeight * CGFloat(notEmptyItemsCount) + Constants.justWatchImageHeight + Constants.stackSpacing
+            (itemHeight + Constants.stackSpacing) * CGFloat(notEmptyItemsCount)
+            + Constants.justWatchImageHeight
         }
     }
 
@@ -45,29 +46,60 @@ struct WatchProviderItemsListView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.stackSpacing) {
             if flatrateItems.isEmpty == false {
-                Text(WatchProviderType.flatrate.title)
-                    .padding(.leading, titleLeadingSpacing)
-                WatchProviderItemsCollectionView(watchProviderItems: flatrateItems)
+                Section {
+                    WatchProviderItemsCollectionView(watchProviderItems: flatrateItems)
+                        .background(.background)
+                        .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
+                } header: {
+                    Text(WatchProviderType.flatrate.title)
+                        .padding(.leading, titleLeadingSpacing)
+                }
+
             }
+
             if buyItems.isEmpty == false {
-                Text(WatchProviderType.buy.title)
-                    .padding(.leading, titleLeadingSpacing)
-                WatchProviderItemsCollectionView(watchProviderItems: buyItems)
+                Section {
+                    WatchProviderItemsCollectionView(watchProviderItems: buyItems)
+                        .background(Constants.backgroundStyle)
+                        .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
+
+                } header: {
+                    Text(WatchProviderType.buy.title)
+                        .padding(.leading, titleLeadingSpacing)
+                }
             }
+
             if adsItems.isEmpty == false {
-                Text(WatchProviderType.ads.title)
-                    .padding(.leading, titleLeadingSpacing)
-                WatchProviderItemsCollectionView(watchProviderItems: adsItems)
+                Section {
+                    WatchProviderItemsCollectionView(watchProviderItems: adsItems)
+                        .background(Constants.backgroundStyle)
+                        .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
+                } header: {
+                    Text(WatchProviderType.ads.title)
+                        .padding(.leading, titleLeadingSpacing)
+                }
             }
+
             if rentItems.isEmpty == false {
-                Text(WatchProviderType.rent.title)
-                    .padding(.leading, titleLeadingSpacing)
-                WatchProviderItemsCollectionView(watchProviderItems: rentItems)
+                Section {
+                    WatchProviderItemsCollectionView(watchProviderItems: rentItems)
+                        .background(Constants.backgroundStyle)
+                        .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
+                } header: {
+                    Text(WatchProviderType.rent.title)
+                        .padding(.leading, titleLeadingSpacing)
+                }
             }
+
             if freeItems.isEmpty == false {
-                Text(WatchProviderType.free.title)
-                    .padding(.leading, titleLeadingSpacing)
-                WatchProviderItemsCollectionView(watchProviderItems: freeItems)
+                Section {
+                    WatchProviderItemsCollectionView(watchProviderItems: freeItems)
+                        .background(Constants.backgroundStyle)
+                        .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
+                } header: {
+                    Text(WatchProviderType.free.title)
+                        .padding(.leading, titleLeadingSpacing)
+                }
             }
 
             if notEmptyItemsCount == .zero {
@@ -80,6 +112,7 @@ struct WatchProviderItemsListView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(height: Constants.justWatchImageHeight)
                 }
+                .padding(.top, Constants.stackSpacing)
             }
         }
         .frame(height: stackHeight)
@@ -89,10 +122,12 @@ struct WatchProviderItemsListView: View {
 extension WatchProviderItemsListView {
     private enum Constants {
         static let itemHeight = CGFloat(120)
+        static let cornerRadius = CGFloat(10)
         static let emptyItemHeight = CGFloat(50)
         static let titleLeadingSpacing = CGFloat(5)
-        static let stackSpacing = CGFloat(5)
+        static let stackSpacing = CGFloat(10)
         static let justWatchImageHeight = CGFloat(20)
+        static let backgroundStyle = BackgroundStyle.background
     }
 }
 

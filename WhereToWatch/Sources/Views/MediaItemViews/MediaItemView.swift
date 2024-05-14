@@ -28,10 +28,12 @@ struct MediaItemView: View {
                 Spacer()
             }
             .lineLimit(Constants.textLineLimit)
-            .frame(maxWidth: .infinity, alignment: .topLeading)
+            .frame(alignment: .topLeading)
+
+            Spacer()
         }
         .padding(Constants.spacing)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .frame(alignment: .topLeading)
     }
 }
 

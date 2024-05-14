@@ -38,6 +38,7 @@ struct SimilarItemsCollectionView: View {
                     }
                 }
             }
+            .frame(height: itemHeight)
             .scrollTargetBehavior(.paging)
         }
     }

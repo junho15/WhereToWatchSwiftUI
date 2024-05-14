@@ -11,7 +11,7 @@ struct MediaDetailHeaderView: View {
         GeometryReader { geometry in
             ZStack(alignment: .bottom) {
                 AsyncImageView(url: backDropURL)
-                    .aspectRatio(Constants.backdropRatio, contentMode: .fill)
+                    .frame(width: geometry.size.width)
                     .overlay {
                         LinearGradient(
                             gradient: Gradient(colors: [.clear, .black]),
@@ -23,8 +23,8 @@ struct MediaDetailHeaderView: View {
 
                 HStack(alignment: .bottom, spacing: Constants.spacing) {
                     AsyncImageView(url: posterURL)
-                        .aspectRatio(Constants.posterRatio, contentMode: .fit)
                         .frame(width: geometry.size.width * Constants.posterWidthRatio)
+                        .aspectRatio(Constants.posterRatio, contentMode: .fit)
 
                     VStack(alignment: .leading, spacing: Constants.spacing) {
                         if let title {
@@ -37,14 +37,14 @@ struct MediaDetailHeaderView: View {
                                 .font(.footnote)
                         }
                     }
+                    .frame(alignment: .leading)
                     .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                    Spacer()
                 }
-                .padding(.horizontal, Constants.spacing)
-                .padding(.bottom, Constants.spacing)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                .frame(alignment: .bottomLeading)
+                .padding(Constants.padding)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
@@ -56,19 +56,25 @@ extension MediaDetailHeaderView {
         static let backdropRatio = CGFloat(281)/CGFloat(500)
         static let posterWidthRatio = 0.2
         static let posterRatio = 1/1.3
+        static let padding = EdgeInsets(top: .zero, leading: 10, bottom: 10, trailing: .zero)
     }
 }
 
 #Preview {
     GeometryReader { geometry in
-        MediaDetailHeaderView(
-            posterURL: PreviewData.mediaItem.posterURL,
-            backDropURL: PreviewData.mediaItem.backdropURL,
-            title: PreviewData.mediaItem.title!,
-            year: PreviewData.mediaItem.year!,
-            genre: PreviewData.mediaItem.genre!
-        )
-        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-        .frame(width: geometry.size.width, height: 100)
+        ScrollView(.vertical) {
+            VStack(spacing: 10) {
+                MediaDetailHeaderView(
+                    posterURL: PreviewData.mediaItem.posterURL,
+                    backDropURL: PreviewData.mediaItem.backdropURL,
+                    title: PreviewData.mediaItem.title!,
+                    year: PreviewData.mediaItem.year!,
+                    genre: PreviewData.mediaItem.genre!
+                )
+                .frame(height: geometry.size.width * CGFloat(281)/CGFloat(500))
+
+                Text("Next View")
+            }
+        }
     }
 }

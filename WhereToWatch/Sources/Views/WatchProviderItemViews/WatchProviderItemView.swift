@@ -9,7 +9,6 @@ struct WatchProviderItemView: View {
                 Spacer()
                 AsyncImageView(url: watchProviderItem.logoURL)
                     .aspectRatio(Constants.imageViewRatio, contentMode: .fit)
-                Spacer()
 
                 if let providerName = watchProviderItem.providerName {
                     Text(providerName)

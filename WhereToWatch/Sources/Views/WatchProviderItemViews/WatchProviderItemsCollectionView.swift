@@ -20,7 +20,7 @@ struct WatchProviderItemsCollectionView: View {
                     }
                 }
             }
-            .frame(height: itemHeight + 20)
+            .frame(height: itemHeight)
             .scrollTargetBehavior(.paging)
         }
     }
