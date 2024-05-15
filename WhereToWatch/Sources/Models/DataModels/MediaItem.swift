@@ -1,7 +1,7 @@
 import Foundation
 import MovieDatabaseAPI
 
-struct MediaItem: Identifiable, Equatable {
+struct MediaItem: Identifiable, Equatable, Hashable {
     let id: Int
     let mediaType: MediaType
     let posterPath: String?

@@ -1,18 +1,19 @@
 import SwiftUI
 
 struct SimilarItemsCollectionView: View {
-    @Binding var selectedSimilarItem: MediaItem?
+    @Binding var path: NavigationPath
+
     let similarItems: [MediaItem]
     let itemHeight: CGFloat
     let onReachEnd: (() -> Void)?
 
     init(
-        selectedSimilarItem: Binding<MediaItem?>,
+        path: Binding<NavigationPath>,
         similarItems: [MediaItem],
         itemHeight: CGFloat = Constants.itemHeight,
         onReachEnd: (() -> Void)? = nil
     ) {
-        self._selectedSimilarItem = selectedSimilarItem
+        self._path = path
         self.similarItems = similarItems
         self.itemHeight = itemHeight
         self.onReachEnd = onReachEnd
@@ -28,7 +29,7 @@ struct SimilarItemsCollectionView: View {
                             .frame(width: geometry.size.width * Constants.itemWidthRatio, height: itemHeight)
                             .contentShape(Rectangle())
                             .onTapGesture {
-                                selectedSimilarItem = similarItem
+                                path.append(similarItem)
                             }
                             .onAppear {
                                 if similarItem == similarItems.last {
@@ -54,13 +55,7 @@ extension SimilarItemsCollectionView {
 }
 
 #Preview {
-    @State var selectedSimilarItem: MediaItem?
-
-    return SimilarItemsCollectionView(
-        selectedSimilarItem: $selectedSimilarItem,
-        similarItems: PreviewData.mediaItems,
-        onReachEnd: {
-            print("Reach End!")
-        }
-    )
+    return SimilarItemsCollectionView(path: .constant(NavigationPath()), similarItems: PreviewData.mediaItems) {
+        print("Reach End!")
+    }
 }

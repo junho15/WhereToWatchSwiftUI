@@ -52,6 +52,11 @@ enum PreviewData {
     }
 
     @MainActor
+    static var mediaDetailViewModel: MediaDetailViewModel {
+        MediaDetailViewModel(mediaItem: mediaItem, favoriteService: favoriteService)
+    }
+
+    @MainActor
     static var searchViewModel: SearchViewModel {
         SearchViewModel(
             movieDatabaseAPIClient: movieDatabaseAPIClient,
