@@ -2,11 +2,10 @@ import SwiftUI
 
 struct MediaItemDetailView: View {
     @Binding var path: NavigationPath
-
-    let mediaDetailViewModel: MediaDetailViewModel
-    let creditsViewModel: CreditsViewModel
-    let similarViewModel: SimilarViewModel
-    let watchProviderViewModel: WatchProviderViewModel
+    @ObservedObject var mediaDetailViewModel: MediaDetailViewModel
+    @ObservedObject var creditsViewModel: CreditsViewModel
+    @ObservedObject var similarViewModel: SimilarViewModel
+    @ObservedObject var watchProviderViewModel: WatchProviderViewModel
 
     @MainActor
     private var mediaItem: MediaItem {
@@ -33,6 +32,12 @@ struct MediaItemDetailView: View {
                         rentItems: watchProviderViewModel.rentItems,
                         freeItems: watchProviderViewModel.freeItems
                     )
+                    .task {
+                        do {
+                            try await watchProviderViewModel.fetchWatchProviders()
+                        } catch {
+                            // Handle error
+                        }                    }
 
                     if let overview = mediaItem.overview {
                         Section {
@@ -55,6 +60,13 @@ struct MediaItemDetailView: View {
                         .padding(.top, Constants.spacing)
                         .background(Constants.itemBackgroundStyle)
                         .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
+                        .task {
+                            do {
+                                try await creditsViewModel.fetchCredits()
+                            } catch {
+                                // Handle error
+                            }
+                        }
                     } header: {
                         Text("CREDITS_HEADER")
                             .padding(.leading, Constants.textLeadingPadding)
@@ -64,12 +76,28 @@ struct MediaItemDetailView: View {
                         SimilarItemsCollectionView(
                             path: $path,
                             similarItems: similarViewModel.similarMediaItem,
-                            itemHeight: Constants.collectionViewItemHeight
+                            itemHeight: Constants.collectionViewItemHeight,
+                            onReachEnd: {
+                                Task {
+                                    do {
+                                        try await similarViewModel.fetchMoreSimilarMedia()
+                                    } catch {
+                                        // Handle error
+                                    }
+                                }
+                            }
                         )
                         .frame(minHeight: Constants.collectionViewItemHeight)
                         .padding(.bottom, Constants.spacing)
                         .background(Constants.itemBackgroundStyle)
                         .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
+                        .task {
+                            do {
+                                try await similarViewModel.fetchSimilarMedia()
+                            } catch {
+                                // Handle error
+                            }
+                        }
                     } header: {
                         Text("SIMILAR_HEADER")
                             .padding(.leading, Constants.textLeadingPadding)

@@ -223,6 +223,14 @@
 			path = Utilites;
 			sourceTree = "<group>";
 		};
+		EB38475B2BF5E043009939A6 /* DetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB5EE6B42BEC8FCB005F68EA /* MediaItemDetailView.swift */,
+			);
+			path = DetailViews;
+			sourceTree = "<group>";
+		};
 		EB58302F2BBBD53900A05309 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,8 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				EB0A63D72BA9B09400B575E2 /* ContentView.swift */,
-				EB5EE6B42BEC8FCB005F68EA /* MediaItemDetailView.swift */,
 				EBEB9E6E2BE4C91100D0DEBA /* CreditItemViews */,
+				EB38475B2BF5E043009939A6 /* DetailViews */,
 				EBEB9E6D2BE4C90000D0DEBA /* ImageViews */,
 				EBEB9E6C2BE4C8F100D0DEBA /* MediaItemViews */,
 				EBEB9E6F2BE4C92000D0DEBA /* SimilarItemViews */,
