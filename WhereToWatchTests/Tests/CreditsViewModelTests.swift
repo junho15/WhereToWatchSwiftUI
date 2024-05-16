@@ -19,12 +19,12 @@ final class CreditsViewModelTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testFetchMovieCredits() async throws {
+    func testFetchCredits() async throws {
         // given
         movieDatabaseAPIClient.movieCreditsResult = PreviewData.creditsData.cast
 
         // when
-        try await sut.fetchMovieCredits(movieID: 0)
+        try await sut.fetchCredits(for: PreviewData.mediaItem)
 
         // then
         await MainActor.run {
@@ -33,44 +33,13 @@ final class CreditsViewModelTests: XCTestCase {
         }
     }
 
-    func testFetchMovieCreditsWithError() async {
+    func testFetchCreditsWithError() async {
         // given
         movieDatabaseAPIClient.movieCreditsError =  MovieDatabaseAPIError.badStatus
 
         // when
         do {
-            try await sut.fetchMovieCredits(movieID: 0)
-            XCTFail("Should return MovieDatabaseAPIError.badStatus")
-        } catch {
-            if let error = error as? MovieDatabaseAPIError, case .badStatus = error {
-                // then
-            } else {
-                XCTFail("Should return MovieDatabaseAPIError.badStatus")
-            }
-        }
-    }
-
-    func testFetchTVShowCredits() async throws {
-        // given
-        movieDatabaseAPIClient.tvShowCreditsResult = PreviewData.creditsData.cast
-
-        // when
-        try await sut.fetchTVShowCredits(tvShowID: 0)
-
-        // then
-        await MainActor.run {
-            XCTAssertEqual(sut.creditItems[0].id, PreviewData.creditsData.cast[0].id)
-            XCTAssertEqual(sut.creditItems.count, PreviewData.creditsData.cast.count)
-        }
-    }
-
-    func testFetchTVShowCreditsWithError() async {
-        // given
-        movieDatabaseAPIClient.tvShowCreditsError =  MovieDatabaseAPIError.badStatus
-
-        // when
-        do {
-            try await sut.fetchTVShowCredits(tvShowID: 0)
+            try await sut.fetchCredits(for: PreviewData.mediaItem)
             XCTFail("Should return MovieDatabaseAPIError.badStatus")
         } catch {
             if let error = error as? MovieDatabaseAPIError, case .badStatus = error {

@@ -36,7 +36,6 @@ private extension MediaDetailViewModel {
             .sink { [weak self] newFavoriteStatus in
                 Task { [weak self] in
                     guard let self, let newFavoriteStatus else { return }
-                    print(newFavoriteStatus)
 
                     do {
                         if newFavoriteStatus {

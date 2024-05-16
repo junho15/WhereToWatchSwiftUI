@@ -21,7 +21,16 @@ final class CreditsViewModel: ObservableObject, LocaleRepresentable {
 // MARK: - Methods
 
 extension CreditsViewModel {
-    func fetchMovieCredits(movieID: Movie.ID) async throws {
+    func fetchCredits(for mediaItem: MediaItem) async throws {
+        switch mediaItem.mediaType {
+        case .movie:
+            try await fetchMovieCredits(movieID: mediaItem.id)
+        case .tvShow:
+            try await fetchTVShowCredits(tvShowID: mediaItem.id)
+        }
+    }
+
+    private func fetchMovieCredits(movieID: Movie.ID) async throws {
         guard let languageCountryCode else { return }
 
         let fetchedMovieCredits = try await movieDatabaseAPIClient.fetchMovieCredits(
@@ -33,7 +42,7 @@ extension CreditsViewModel {
         }
     }
 
-    func fetchTVShowCredits(tvShowID: TVShow.ID) async throws {
+    private func fetchTVShowCredits(tvShowID: TVShow.ID) async throws {
         guard let languageCountryCode else { return }
 
         let fetchedTVShowCredits = try await movieDatabaseAPIClient.fetchTVShowCredits(
