@@ -21,7 +21,11 @@ final class MediaDetailViewModel: ObservableObject, LocaleRepresentable {
         self.favoriteService = favoriteService
 
         Task {
-            self.isFavorite = try? await favoriteService.contains(mediaItem.id)
+            do {
+                self.isFavorite = try await favoriteService.contains(mediaItem.id)
+            } catch {
+                // Handle error
+            }
             setUpFavoriteStatus()
         }
     }

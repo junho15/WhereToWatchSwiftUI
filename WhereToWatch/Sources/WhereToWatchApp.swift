@@ -1,10 +1,3 @@
-//
-//  WhereToWatchApp.swift
-//  WhereToWatch
-//
-//  Created by junho lee on 3/19/24.
-//
-
 import SwiftUI
 
 @main

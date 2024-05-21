@@ -51,7 +51,11 @@ private extension FavoritesViewModel {
             .sink { [weak self] sortOption in
                 Task { [weak self] in
                     guard let self else { return }
-                    try? await self.fetchFavorites(sortOption: sortOption)
+                    do {
+                        try await self.fetchFavorites(sortOption: sortOption)
+                    } catch {
+                        // Handle error
+                    }
                 }
             }
             .store(in: &cancellables)
@@ -73,7 +77,11 @@ private extension FavoritesViewModel {
                 deletedIDs.forEach { id in
                     Task { [weak self] in
                         guard let self else { return }
-                        try? await self.remove(id)
+                        do {
+                            try await self.remove(id)
+                        } catch {
+                            // Handle error
+                        }
                     }
                 }
             }

@@ -21,7 +21,7 @@ struct MediaItemsCollectionView: View {
                 LazyHGrid(rows: [
                     GridItem(.fixed(geometry.size.height * Constants.gridItemRatio)),
                     GridItem(.fixed(geometry.size.height * Constants.gridItemRatio))
-                ]) {
+                ], spacing: .zero) {
                     ForEach(mediaItems) { mediaItem in
                         MediaItemView(mediaItem: mediaItem)
                             .frame(width: geometry.size.width, height: geometry.size.height * Constants.gridItemRatio)

@@ -60,6 +60,7 @@
 		EBEB9E762BE8D11700D0DEBA /* CreditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E752BE8D11700D0DEBA /* CreditItemView.swift */; };
 		EBEB9E782BE90CB500D0DEBA /* CreditItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E772BE90CB500D0DEBA /* CreditItemsCollectionView.swift */; };
 		EBEB9E7A2BE9F3B100D0DEBA /* WatchProviderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E792BE9F3B100D0DEBA /* WatchProviderItemView.swift */; };
+		EBFB94AE2BFB389400957895 /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94AD2BFB389400957895 /* TrendingView.swift */; };
 		EBFB94B02BFC668900957895 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94AF2BFC668900957895 /* ServiceLocator.swift */; };
 		EBFB94B22BFC6A5C00957895 /* ViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94B12BFC6A5C00957895 /* ViewModelProvider.swift */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,7 @@
 		EBEB9E752BE8D11700D0DEBA /* CreditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditItemView.swift; sourceTree = "<group>"; };
 		EBEB9E772BE90CB500D0DEBA /* CreditItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditItemsCollectionView.swift; sourceTree = "<group>"; };
 		EBEB9E792BE9F3B100D0DEBA /* WatchProviderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderItemView.swift; sourceTree = "<group>"; };
+		EBFB94AD2BFB389400957895 /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
 		EBFB94AF2BFC668900957895 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		EBFB94B12BFC6A5C00957895 /* ViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,6 +271,7 @@
 				EBEB9E6D2BE4C90000D0DEBA /* ImageViews */,
 				EBEB9E6C2BE4C8F100D0DEBA /* MediaItemViews */,
 				EBEB9E6F2BE4C92000D0DEBA /* SimilarItemViews */,
+				EBFB94AC2BFB384400957895 /* TrendingViews */,
 				EBEB9E702BE4C92800D0DEBA /* WatchProviderItemViews */,
 			);
 			path = Views;
@@ -386,6 +389,14 @@
 			path = WatchProviderItemViews;
 			sourceTree = "<group>";
 		};
+		EBFB94AC2BFB384400957895 /* TrendingViews */ = {
+			isa = PBXGroup;
+			children = (
+				EBFB94AD2BFB389400957895 /* TrendingView.swift */,
+			);
+			path = TrendingViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -436,7 +447,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					EB0A63D12BA9B09400B575E2 = {
 						CreatedOnToolsVersion = 15.3;
@@ -540,6 +551,7 @@
 				EB0A640D2BAB026800B575E2 /* Secrets.swift in Sources */,
 				EBEB9E4E2BD6708500D0DEBA /* FavoritesViewModel.swift in Sources */,
 				EBEB9E762BE8D11700D0DEBA /* CreditItemView.swift in Sources */,
+				EBFB94AE2BFB389400957895 /* TrendingView.swift in Sources */,
 				EB0A63D62BA9B09400B575E2 /* WhereToWatchApp.swift in Sources */,
 				EB58303A2BBD1FF500A05309 /* PreviewData.swift in Sources */,
 				EBEB9E7A2BE9F3B100D0DEBA /* WatchProviderItemView.swift in Sources */,
@@ -606,6 +618,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -670,6 +683,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -729,6 +743,7 @@
 				CODE_SIGN_ENTITLEMENTS = WhereToWatch/WhereToWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "WhereToWatch/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q76RZAC2A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -774,6 +789,7 @@
 				CODE_SIGN_ENTITLEMENTS = WhereToWatch/WhereToWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "WhereToWatch/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q76RZAC2A2;
 				ENABLE_HARDENED_RUNTIME = YES;
