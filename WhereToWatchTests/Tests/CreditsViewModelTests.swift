@@ -10,7 +10,7 @@ final class CreditsViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         movieDatabaseAPIClient = MockMovieDatabaseAPIClient()
-        sut = CreditsViewModel(movieDatabaseAPIClient: movieDatabaseAPIClient)
+        sut = CreditsViewModel(mediaItem: PreviewData.mediaItem, movieDatabaseAPIClient: movieDatabaseAPIClient)
     }
 
     override func tearDownWithError() throws {
@@ -24,7 +24,7 @@ final class CreditsViewModelTests: XCTestCase {
         movieDatabaseAPIClient.movieCreditsResult = PreviewData.creditsData.cast
 
         // when
-        try await sut.fetchCredits(for: PreviewData.mediaItem)
+        try await sut.fetchCredits()
 
         // then
         await MainActor.run {
@@ -39,7 +39,7 @@ final class CreditsViewModelTests: XCTestCase {
 
         // when
         do {
-            try await sut.fetchCredits(for: PreviewData.mediaItem)
+            try await sut.fetchCredits()
             XCTFail("Should return MovieDatabaseAPIError.badStatus")
         } catch {
             if let error = error as? MovieDatabaseAPIError, case .badStatus = error {

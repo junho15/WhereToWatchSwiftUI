@@ -35,6 +35,7 @@ enum PreviewData {
     @MainActor
     static var creditsViewModel: CreditsViewModel {
         CreditsViewModel(
+            mediaItem: mediaItem,
             movieDatabaseAPIClient: movieDatabaseAPIClient,
             creditItems: PreviewData.creditsData.cast.map { CreditItem(credit: $0) }
         )

@@ -8,11 +8,15 @@ final class CreditsViewModel: ObservableObject, LocaleRepresentable {
 
     @Published var creditItems: [CreditItem]
 
+    private let mediaItem: MediaItem
     private let movieDatabaseAPIClient: MovieDatabaseAPIClientProtocol
 
     // MARK: Lifecycle
 
-    init(movieDatabaseAPIClient: MovieDatabaseAPIClientProtocol, creditItems: [CreditItem] = []) {
+    init(
+        mediaItem: MediaItem, movieDatabaseAPIClient: MovieDatabaseAPIClientProtocol, creditItems: [CreditItem] = []
+    ) {
+        self.mediaItem = mediaItem
         self.creditItems = creditItems
         self.movieDatabaseAPIClient = movieDatabaseAPIClient
     }
@@ -21,7 +25,7 @@ final class CreditsViewModel: ObservableObject, LocaleRepresentable {
 // MARK: - Methods
 
 extension CreditsViewModel {
-    func fetchCredits(for mediaItem: MediaItem) async throws {
+    func fetchCredits() async throws {
         switch mediaItem.mediaType {
         case .movie:
             try await fetchMovieCredits(movieID: mediaItem.id)
