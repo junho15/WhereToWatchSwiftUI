@@ -22,62 +22,35 @@ final class TrendingViewModelTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testFetchTrendingMovies() async throws {
+    func testFetchTrendingMediaItems() async throws {
         // given
         movieDatabaseAPIClient.movieGenresListResult = PreviewData.genreListData
+        movieDatabaseAPIClient.tvShowGenresListResult = PreviewData.genreListData
         movieDatabaseAPIClient.trendingMoviesResult = PreviewData.moviePageData
+        movieDatabaseAPIClient.trendingTVShowsResult = PreviewData.tvShowPageData
 
         // when
-        try await sut.fetchTrendingMovies(of: .day)
+        try await sut.fetchTrendingMediaItems()
 
         // then
         await MainActor.run {
             XCTAssertEqual(sut.movieMediaItems[0].id, PreviewData.moviePageData.results[0].id)
             XCTAssertEqual(sut.movieMediaItems.count, PreviewData.moviePageData.results.count)
-        }
-    }
-
-    func testFetchTrendingMoviesWithError() async {
-        // given
-        movieDatabaseAPIClient.movieGenresListResult = PreviewData.genreListData
-        movieDatabaseAPIClient.trendingMoviesError = MovieDatabaseAPIError.badStatus
-
-        // when
-        do {
-            try await sut.fetchTrendingMovies(of: .day)
-            XCTFail("Should return MovieDatabaseAPIError.badStatus")
-        } catch {
-            if let error = error as? MovieDatabaseAPIError, case .badStatus = error {
-                // then
-            } else {
-                XCTFail("Should return MovieDatabaseAPIError.badStatus")
-            }
-        }
-    }
-
-    func testFetchTrendingTVShows() async throws {
-        // given
-        movieDatabaseAPIClient.tvShowGenresListResult = PreviewData.genreListData
-        movieDatabaseAPIClient.trendingTVShowsResult = PreviewData.tvShowPageData
-
-        // when
-        try await sut.fetchTrendingTVShows(of: .day)
-
-        // then
-        await MainActor.run {
             XCTAssertEqual(sut.tvShowMediaItems[0].id, PreviewData.tvShowPageData.results[0].id)
             XCTAssertEqual(sut.tvShowMediaItems.count, PreviewData.tvShowPageData.results.count)
         }
     }
 
-    func testFetchTrendingTVShowsWithError() async {
+    func testFetchTrendingMediaItemsWithError() async {
         // given
+        movieDatabaseAPIClient.movieGenresListResult = PreviewData.genreListData
         movieDatabaseAPIClient.tvShowGenresListResult = PreviewData.genreListData
+        movieDatabaseAPIClient.trendingMoviesError = MovieDatabaseAPIError.badStatus
         movieDatabaseAPIClient.trendingTVShowsError = MovieDatabaseAPIError.badStatus
 
         // when
         do {
-            try await sut.fetchTrendingTVShows(of: .day)
+            try await sut.fetchTrendingMediaItems()
             XCTFail("Should return MovieDatabaseAPIError.badStatus")
         } catch {
             if let error = error as? MovieDatabaseAPIError, case .badStatus = error {

@@ -8,6 +8,17 @@ final class TrendingViewModel: ObservableObject, LocaleRepresentable {
 
     @Published var movieMediaItems: [MediaItem]
     @Published var tvShowMediaItems: [MediaItem]
+    @Published var selectedTimeWindowIndex: Int = 0 {
+        didSet {
+            Task {
+                do {
+                    try await fetchTrendingMediaItems()
+                } catch {
+                    // Handle error
+                }
+            }
+        }
+    }
 
     private let movieDatabaseAPIClient: MovieDatabaseAPIClientProtocol
     private let genresListFetcher: GenresListFetcherProtocol
@@ -30,7 +41,22 @@ final class TrendingViewModel: ObservableObject, LocaleRepresentable {
 // MARK: - Methods
 
 extension TrendingViewModel {
-    func fetchTrendingMovies(of timeWindow: MovieDatabaseURL.TimeWindow) async throws {
+    func fetchTrendingMediaItems() async throws {
+        let selectedTimeWindow: MovieDatabaseURL.TimeWindow
+        switch selectedTimeWindowIndex {
+        case 0:
+            selectedTimeWindow = .day
+        case 1:
+            selectedTimeWindow = .week
+        default:
+            fatalError("Out of Range of TimeWindow")
+        }
+
+        try await fetchTrendingMovies(of: selectedTimeWindow)
+        try await fetchTrendingTVShows(of: selectedTimeWindow)
+    }
+
+    private func fetchTrendingMovies(of timeWindow: MovieDatabaseURL.TimeWindow) async throws {
         guard let languageCode, let languageCountryCode else { return }
 
         let genresList = try await genresListFetcher.fetchMovieGenresList(languageCode: languageCode)
@@ -45,7 +71,7 @@ extension TrendingViewModel {
         }
     }
 
-    func fetchTrendingTVShows(of timeWindow: MovieDatabaseURL.TimeWindow) async throws {
+    private func fetchTrendingTVShows(of timeWindow: MovieDatabaseURL.TimeWindow) async throws {
         guard let languageCode, let languageCountryCode else { return }
 
         let genresList = try await genresListFetcher.fetchTVShowGenresList(languageCode: languageCode)

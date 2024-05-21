@@ -103,6 +103,16 @@ enum PreviewData {
         )
     }
 
+    @MainActor
+    static var trendingViewModel: TrendingViewModel {
+        TrendingViewModel(
+            movieDatabaseAPIClient: movieDatabaseAPIClient,
+            genresListFetcher: genresListFetcher,
+            movieMediaItems: mediaItems,
+            tvShowMediaItems: mediaItems
+        )
+    }
+
     private static var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
