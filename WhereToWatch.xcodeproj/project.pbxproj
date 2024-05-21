@@ -61,6 +61,7 @@
 		EBEB9E782BE90CB500D0DEBA /* CreditItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E772BE90CB500D0DEBA /* CreditItemsCollectionView.swift */; };
 		EBEB9E7A2BE9F3B100D0DEBA /* WatchProviderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E792BE9F3B100D0DEBA /* WatchProviderItemView.swift */; };
 		EBFB94B02BFC668900957895 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94AF2BFC668900957895 /* ServiceLocator.swift */; };
+		EBFB94B22BFC6A5C00957895 /* ViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94B12BFC6A5C00957895 /* ViewModelProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		EBEB9E772BE90CB500D0DEBA /* CreditItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditItemsCollectionView.swift; sourceTree = "<group>"; };
 		EBEB9E792BE9F3B100D0DEBA /* WatchProviderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderItemView.swift; sourceTree = "<group>"; };
 		EBFB94AF2BFC668900957895 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		EBFB94B12BFC6A5C00957895 /* ViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				EB5830412BBE74CE00A05309 /* LocaleRepresentable.swift */,
 				EB0A640C2BAB026800B575E2 /* Secrets.swift */,
 				EBFB94AF2BFC668900957895 /* ServiceLocator.swift */,
+				EBFB94B12BFC6A5C00957895 /* ViewModelProvider.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				EB5830362BBBEE4700A05309 /* Date.swift in Sources */,
 				EBFB94B02BFC668900957895 /* ServiceLocator.swift in Sources */,
 				EB5EE6B32BEA0410005F68EA /* WatchProviderItemsListView.swift in Sources */,
+				EBFB94B22BFC6A5C00957895 /* ViewModelProvider.swift in Sources */,
 				EBEB9E502BD67B9B00D0DEBA /* FavoritesSortOption.swift in Sources */,
 				EBEB9E572BD8D49900D0DEBA /* MediaDetailViewModel.swift in Sources */,
 				EB5830702BCE86CD00A05309 /* FavoriteService.swift in Sources */,
