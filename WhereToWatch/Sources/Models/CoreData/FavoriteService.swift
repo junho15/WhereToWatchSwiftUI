@@ -10,8 +10,6 @@ protocol FavoriteServiceProtocol {
 final class FavoriteService {
     typealias FetchRequest = NSFetchRequest<MediaItemEntity>
 
-    static let shared = FavoriteService()
-
     private lazy var persistenceContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: Constants.persistentContainerName)
         container.loadPersistentStores { _, error in
@@ -35,8 +33,6 @@ final class FavoriteService {
     private var fetchRequest: FetchRequest {
         return MediaItemEntity.fetchRequest()
     }
-
-    private init() { }
 }
 
 extension FavoriteService: FavoriteServiceProtocol {

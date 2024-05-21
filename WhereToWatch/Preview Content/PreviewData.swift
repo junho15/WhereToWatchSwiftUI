@@ -14,7 +14,7 @@ enum PreviewData {
 
     static let movieDatabaseAPIClient = MovieDatabaseAPIClient(apiKey: Secrets.apiKey)
     static let genresListFetcher = GenresListFetcher(movieDatabaseAPIClient: movieDatabaseAPIClient)
-    static let favoriteService = FavoriteService.shared
+    static let favoriteService = FavoriteService()
 
     static var mediaItem: MediaItem {
         MediaItem(media: movieDetailData, genreList: genreListData)
