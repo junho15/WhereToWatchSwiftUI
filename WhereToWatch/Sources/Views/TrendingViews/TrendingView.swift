@@ -84,6 +84,7 @@ extension TrendingView {
 
         return MediaItemDetailView(
             path: $navigationPath,
+            showingDetail: $showingDetail,
             mediaDetailViewModel: mediaDetailViewModel,
             creditsViewModel: creditsViewModel,
             similarViewModel: similarViewModel,
