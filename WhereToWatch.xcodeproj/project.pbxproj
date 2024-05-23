@@ -63,6 +63,7 @@
 		EBFB94AE2BFB389400957895 /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94AD2BFB389400957895 /* TrendingView.swift */; };
 		EBFB94B02BFC668900957895 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94AF2BFC668900957895 /* ServiceLocator.swift */; };
 		EBFB94B22BFC6A5C00957895 /* ViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94B12BFC6A5C00957895 /* ViewModelProvider.swift */; };
+		EBFB94B52BFE113D00957895 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94B42BFE113D00957895 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		EBFB94AD2BFB389400957895 /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
 		EBFB94AF2BFC668900957895 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		EBFB94B12BFC6A5C00957895 /* ViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProvider.swift; sourceTree = "<group>"; };
+		EBFB94B42BFE113D00957895 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 				EB38475B2BF5E043009939A6 /* DetailViews */,
 				EBEB9E6D2BE4C90000D0DEBA /* ImageViews */,
 				EBEB9E6C2BE4C8F100D0DEBA /* MediaItemViews */,
+				EBFB94B32BFE111600957895 /* SearchViews */,
 				EBEB9E6F2BE4C92000D0DEBA /* SimilarItemViews */,
 				EBFB94AC2BFB384400957895 /* TrendingViews */,
 				EBEB9E702BE4C92800D0DEBA /* WatchProviderItemViews */,
@@ -395,6 +398,14 @@
 				EBFB94AD2BFB389400957895 /* TrendingView.swift */,
 			);
 			path = TrendingViews;
+			sourceTree = "<group>";
+		};
+		EBFB94B32BFE111600957895 /* SearchViews */ = {
+			isa = PBXGroup;
+			children = (
+				EBFB94B42BFE113D00957895 /* SearchView.swift */,
+			);
+			path = SearchViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,6 +571,7 @@
 				EB58303E2BBE68BB00A05309 /* WatchProviderType.swift in Sources */,
 				EB5830422BBE74CE00A05309 /* LocaleRepresentable.swift in Sources */,
 				EB5830762BCEA7C100A05309 /* FavoriteMediaItem.swift in Sources */,
+				EBFB94B52BFE113D00957895 /* SearchView.swift in Sources */,
 				EBEB9E6B2BE365C300D0DEBA /* MediaItemsListView.swift in Sources */,
 				EB5830662BC5393A00A05309 /* SearchViewModel.swift in Sources */,
 				EBEB9E5F2BDF6EF200D0DEBA /* AsyncImageView.swift in Sources */,

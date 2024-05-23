@@ -62,9 +62,7 @@ enum PreviewData {
         SearchViewModel(
             movieDatabaseAPIClient: movieDatabaseAPIClient,
             genresListFetcher: genresListFetcher,
-            searchText: "",
-            movieMediaItems: mediaItems,
-            tvShowMediaItems: mediaItems)
+            searchText: "")
     }
 
     @MainActor

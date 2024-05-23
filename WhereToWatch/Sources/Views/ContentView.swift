@@ -3,7 +3,7 @@ import MovieDatabaseAPI
 
 struct ContentView: View {
     var body: some View {
-        TrendingView(trendingViewModel: ViewModelProvider.shared.trendingViewModel())
+        SearchView(searchViewModel: ViewModelProvider.shared.searchViewModel())
     }
 }
 

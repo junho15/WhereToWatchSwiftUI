@@ -46,7 +46,8 @@ struct TrendingView: View {
                             }
                     }
                 }
-            })
+            }
+        )
     }
 }
 
