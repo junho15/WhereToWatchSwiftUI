@@ -17,6 +17,8 @@ final class SearchViewModel: ObservableObject, LocaleRepresentable {
     private var tvShowLastPage: Int
     private var movieTotalPage: Int
     private var tvShowTotalPage: Int
+    var movieTotalCount: Int = 0
+    var tvShowTotalCount: Int = 0
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -64,7 +66,7 @@ extension SearchViewModel {
 
     private func setUpSearch() {
         $searchText
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .debounce(for: .milliseconds(1000), scheduler: RunLoop.main)
             .removeDuplicates()
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -103,6 +105,7 @@ extension SearchViewModel {
         self.movieLastPage = result.page
         self.movieTotalPage = result.totalPages
         if result.page == 1 {
+            self.movieTotalCount = result.totalResults
             self.movieMediaItems = mediaItems
         } else {
             self.movieMediaItems += mediaItems
@@ -124,6 +127,7 @@ extension SearchViewModel {
         self.tvShowLastPage = result.page
         self.tvShowTotalPage = result.totalPages
         if result.page == 1 {
+            self.tvShowTotalCount = result.totalResults
             self.tvShowMediaItems = mediaItems
         } else {
             self.tvShowMediaItems += mediaItems
