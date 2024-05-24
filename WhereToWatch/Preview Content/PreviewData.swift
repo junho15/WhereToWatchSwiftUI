@@ -46,9 +46,7 @@ enum PreviewData {
         FavoritesViewModel(
             movieDatabaseAPIClient: movieDatabaseAPIClient,
             genresListFetcher: genresListFetcher,
-            favoriteService: favoriteService,
-            mediaItems: mediaItems,
-            sortOption: .registrationDate
+            favoriteService: favoriteService
         )
     }
 

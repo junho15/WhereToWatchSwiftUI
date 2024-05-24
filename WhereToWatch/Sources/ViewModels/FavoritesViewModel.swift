@@ -9,6 +9,7 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
 
     @Published var mediaItems: [MediaItem]
     @Published var sortOption: FavoritesSortOption
+    @Published var searchText: String
 
     private let movieDatabaseAPIClient: MovieDatabaseAPIClientProtocol
     private let genresListFetcher: GenresListFetcherProtocol
@@ -22,15 +23,18 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
         genresListFetcher: GenresListFetcherProtocol,
         favoriteService: FavoriteServiceProtocol,
         mediaItems: [MediaItem] = [],
-        sortOption: FavoritesSortOption = .registrationDate
+        sortOption: FavoritesSortOption = .registrationDate,
+        searchText: String = ""
     ) {
         self.movieDatabaseAPIClient = movieDatabaseAPIClient
         self.genresListFetcher = genresListFetcher
         self.favoriteService = favoriteService
         self.mediaItems = mediaItems
         self.sortOption = sortOption
+        self.searchText = searchText
 
         setUpSortOption()
+        setUpSearchQuery()
         setUpFavoritesObserve()
     }
 }
@@ -40,7 +44,8 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
 extension FavoritesViewModel {
     func fetchFavorites() async throws {
         let favoriteMediaItems = try await favoriteService.fetch(offset: nil, limit: nil)
-        mediaItems = try await mediaItems(for: favoriteMediaItems)
+        let fetchedMediaItems = try await mediaItems(for: favoriteMediaItems)
+        applyFilters(to: fetchedMediaItems)
     }
 }
 
@@ -49,15 +54,27 @@ private extension FavoritesViewModel {
         $sortOption
             .dropFirst()
             .sink { [weak self] _ in
-                Task { [weak self] in
-                    guard let self else { return }
-                    do {
-                        try await self.fetchFavorites()
-                    } catch {
-                        // Handle error
-                    }
-                }
+                guard let self else { return }
+                self.applyFilters()
             }
+            .store(in: &cancellables)
+    }
+
+    func setUpSearchQuery() {
+        $searchText
+            .debounce(for: .milliseconds(1000), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }, receiveValue: { [weak self] _ in
+                guard let self else { return }
+                self.applyFilters()
+            })
             .store(in: &cancellables)
     }
 
@@ -134,5 +151,17 @@ private extension FavoritesViewModel {
 
     func remove(_ id: MediaItem.ID) async throws {
         try await favoriteService.remove(id)
+    }
+
+    func applyFilters(to items: [MediaItem]? = nil) {
+        let filteredItems = (items ?? mediaItems).filter { mediaItem in
+            guard searchText.isEmpty == false else { return true }
+            guard let title = mediaItem.title else { return false }
+            return title.localizedCaseInsensitiveContains(searchText)
+        }
+
+        let sortedItems = filteredItems.sorted(by: sortOption.comparator)
+
+        mediaItems = sortedItems
     }
 }
