@@ -42,7 +42,7 @@ final class FavoritesViewModelTests: XCTestCase {
         favoriteService.favorites = [TestData.favoriteMediaItem]
 
         // when
-        try await sut.fetchFavorites(sortOption: .registrationDate)
+        try await sut.fetchFavorites()
 
         // then
         XCTAssertEqual(sut.mediaItems[0].id, TestData.mediaItems[0].id)
@@ -55,7 +55,7 @@ final class FavoritesViewModelTests: XCTestCase {
 
         // when
         do {
-            try await sut.fetchFavorites(sortOption: .registrationDate)
+            try await sut.fetchFavorites()
             XCTFail("Should return error")
         } catch {
             // then
@@ -65,17 +65,37 @@ final class FavoritesViewModelTests: XCTestCase {
     @MainActor
     func testSortOptionChanging() async {
         // given
-        movieDatabaseAPIClient.movieGenresListResult = TestData.movieGenreList
-        movieDatabaseAPIClient.movieDetailResult = TestData.movieDetailData
-        favoriteService.favorites = [TestData.favoriteMediaItem]
-        let sortOption = FavoritesSortOption.reverseRegistrationDate
+        let mediaItems = PreviewData.mediaItems
+        let sortOption = FavoritesSortOption.title
+        let sortedItems = PreviewData.mediaItems.sorted(by: sortOption.comparator)
+        sut.mediaItems = mediaItems
 
         // when
         sut.sortOption = sortOption
 
         // then
         try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
-        XCTAssertEqual(self.favoriteService.sortOption, sortOption)
+        XCTAssertNotEqual(sut.mediaItems, mediaItems)
+        XCTAssertEqual(sut.mediaItems, sortedItems)
+    }
+
+    @MainActor
+    func testSearchText() async {
+        // given
+        let mediaItems = PreviewData.mediaItems
+        let searchText = "토르"
+        let filteredItems = PreviewData.mediaItems.filter { mediaItem in
+            mediaItem.title?.localizedCaseInsensitiveContains(searchText) ?? true
+        }
+        sut.mediaItems = PreviewData.mediaItems
+
+        // when
+        sut.searchText = searchText
+
+        // then
+        try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
+        XCTAssertNotEqual(sut.mediaItems, mediaItems)
+        XCTAssertEqual(sut.mediaItems, filteredItems)
     }
 
     @MainActor

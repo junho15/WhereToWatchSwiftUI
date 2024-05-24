@@ -5,7 +5,6 @@ import Foundation
 final class MockFavoriteService: FavoriteServiceProtocol {
     var favorites: [FavoriteMediaItem] = []
     var shouldReturnError = false
-    var sortOption = FavoritesSortOption.registrationDate
 
     func contains(_ id: FavoriteMediaItem.ID) async throws -> Bool {
         guard shouldReturnError == false else {
@@ -14,11 +13,10 @@ final class MockFavoriteService: FavoriteServiceProtocol {
         return favorites.contains(where: { $0.id == id })
     }
 
-    func fetch(sortOption: FavoritesSortOption, offset: Int?, limit: Int?) async throws -> [FavoriteMediaItem] {
+    func fetch(offset: Int?, limit: Int?) async throws -> [FavoriteMediaItem] {
         guard shouldReturnError == false else {
             throw NSError(domain: "MockFavoriteServiceError", code: 0, userInfo: nil)
         }
-        self.sortOption = sortOption
         return favorites
     }
 

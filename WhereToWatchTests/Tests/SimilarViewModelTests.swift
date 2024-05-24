@@ -14,7 +14,7 @@ final class SimilarViewModelTests: XCTestCase {
         genresListFetcher = GenresListFetcher(movieDatabaseAPIClient: movieDatabaseAPIClient)
         let mediaItem = MediaItem(
             id: 1, mediaType: .movie, posterPath: nil, backdropPath: nil,
-            title: nil, genre: nil, year: nil, overview: nil
+            title: nil, genre: nil, date: nil, overview: nil
         )
         sut = SimilarViewModel(
             mediaItem: mediaItem, movieDatabaseAPIClient: movieDatabaseAPIClient, genresListFetcher: genresListFetcher
