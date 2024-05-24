@@ -2,7 +2,7 @@ import CoreData
 
 protocol FavoriteServiceProtocol {
     func contains(_ id: FavoriteMediaItem.ID) async throws -> Bool
-    func fetch(sortOption: FavoritesSortOption, offset: Int?, limit: Int?) async throws -> [FavoriteMediaItem]
+    func fetch(offset: Int?, limit: Int?) async throws -> [FavoriteMediaItem]
     func add(_ favoriteMediaItem: FavoriteMediaItem) async throws
     func remove(_ id: FavoriteMediaItem.ID) async throws
 }
@@ -41,11 +41,8 @@ extension FavoriteService: FavoriteServiceProtocol {
         return result.isEmpty == false
     }
 
-    func fetch(
-        sortOption: FavoritesSortOption = .registrationDate, offset: Int? = nil, limit: Int? = nil
-    ) async throws -> [FavoriteMediaItem] {
+    func fetch(offset: Int? = nil, limit: Int? = nil) async throws -> [FavoriteMediaItem] {
         let request = fetchRequest
-        request.sortDescriptors = [sortOption.sortDescriptor]
 
         if let offset,
            let limit {

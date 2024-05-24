@@ -38,8 +38,8 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
 // MARK: - Methods
 
 extension FavoritesViewModel {
-    func fetchFavorites(sortOption: FavoritesSortOption) async throws {
-        let favoriteMediaItems = try await favoriteService.fetch(sortOption: sortOption, offset: nil, limit: nil)
+    func fetchFavorites() async throws {
+        let favoriteMediaItems = try await favoriteService.fetch(offset: nil, limit: nil)
         mediaItems = try await mediaItems(for: favoriteMediaItems)
     }
 }
@@ -48,11 +48,11 @@ private extension FavoritesViewModel {
     func setUpSortOption() {
         $sortOption
             .dropFirst()
-            .sink { [weak self] sortOption in
+            .sink { [weak self] _ in
                 Task { [weak self] in
                     guard let self else { return }
                     do {
-                        try await self.fetchFavorites(sortOption: sortOption)
+                        try await self.fetchFavorites()
                     } catch {
                         // Handle error
                     }
