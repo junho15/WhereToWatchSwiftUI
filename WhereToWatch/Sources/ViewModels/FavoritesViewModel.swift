@@ -15,6 +15,7 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
     private let genresListFetcher: GenresListFetcherProtocol
     private let favoriteService: FavoriteServiceProtocol
     private var cancellables = Set<AnyCancellable>()
+    private var fetchedMediaItems: [MediaItem]
 
     // MARK: Lifecycle
 
@@ -30,12 +31,12 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
         self.genresListFetcher = genresListFetcher
         self.favoriteService = favoriteService
         self.mediaItems = mediaItems
+        self.fetchedMediaItems = mediaItems
         self.sortOption = sortOption
         self.searchText = searchText
 
         setUpSortOption()
         setUpSearchQuery()
-        setUpFavoritesObserve()
     }
 }
 
@@ -44,8 +45,23 @@ final class FavoritesViewModel: ObservableObject, LocaleRepresentable {
 extension FavoritesViewModel {
     func fetchFavorites() async throws {
         let favoriteMediaItems = try await favoriteService.fetch(offset: nil, limit: nil)
-        let fetchedMediaItems = try await mediaItems(for: favoriteMediaItems)
+        fetchedMediaItems = try await mediaItems(for: favoriteMediaItems)
         applyFilters(to: fetchedMediaItems)
+    }
+
+    func deleteMediaItem(at indexSet: IndexSet) {
+        indexSet.forEach { index in
+            let mediaItem = mediaItems[index]
+            Task {
+                do {
+                    try await remove(mediaItem.id)
+                    mediaItems.remove(at: index)
+                    fetchedMediaItems.removeAll(where: { $0.id == mediaItem.id })
+                } catch {
+                    // Handle error
+                }
+            }
+        }
     }
 }
 
@@ -53,9 +69,9 @@ private extension FavoritesViewModel {
     func setUpSortOption() {
         $sortOption
             .dropFirst()
-            .sink { [weak self] _ in
+            .sink { [weak self] sortOption in
                 guard let self else { return }
-                self.applyFilters()
+                self.applyFilters(sortOption: sortOption)
             }
             .store(in: &cancellables)
     }
@@ -71,37 +87,10 @@ private extension FavoritesViewModel {
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
-            }, receiveValue: { [weak self] _ in
+            }, receiveValue: { [weak self] searchText in
                 guard let self else { return }
-                self.applyFilters()
+                self.applyFilters(searchText: searchText)
             })
-            .store(in: &cancellables)
-    }
-
-    func setUpFavoritesObserve() {
-        $mediaItems
-            .dropFirst()
-            .removeDuplicates()
-            .sink { [weak self] items in
-                guard let self else { return }
-                guard items.count < self.mediaItems.count else { return }
-
-                let currentIDs = Set(items.map { $0.id })
-                let previousIDs = Set(self.mediaItems.map { $0.id })
-
-                let deletedIDs = previousIDs.subtracting(currentIDs)
-                guard deletedIDs.isEmpty == false else { return }
-                deletedIDs.forEach { id in
-                    Task { [weak self] in
-                        guard let self else { return }
-                        do {
-                            try await self.remove(id)
-                        } catch {
-                            // Handle error
-                        }
-                    }
-                }
-            }
             .store(in: &cancellables)
     }
 
@@ -137,7 +126,9 @@ private extension FavoritesViewModel {
             let movie = try await self.movieDatabaseAPIClient.fetchMovieDetail(
                 movieID: favoriteMediaItem.id, language: languageCountryCode
             )
-            return MediaItem(media: movie, genreList: movieGenresList)
+            return MediaItem(
+                media: movie, genreList: movieGenresList, favoriteRegistrationDate: favoriteMediaItem.registrationDate
+            )
         case .tvShow:
             let tvShowGenresList = try await self.genresListFetcher.fetchTVShowGenresList(
                 languageCode: languageCode
@@ -145,7 +136,9 @@ private extension FavoritesViewModel {
             let tvShow = try await self.movieDatabaseAPIClient.fetchTVShowDetail(
                 tvShowID: favoriteMediaItem.id, language: languageCountryCode
             )
-            return MediaItem(media: tvShow, genreList: tvShowGenresList)
+            return MediaItem(
+                media: tvShow, genreList: tvShowGenresList, favoriteRegistrationDate: favoriteMediaItem.registrationDate
+            )
         }
     }
 
@@ -153,13 +146,19 @@ private extension FavoritesViewModel {
         try await favoriteService.remove(id)
     }
 
-    func applyFilters(to items: [MediaItem]? = nil) {
-        let filteredItems = (items ?? mediaItems).filter { mediaItem in
+    func applyFilters(
+        to items: [MediaItem]? = nil,
+        searchText: String? = nil,
+        sortOption: FavoritesSortOption? = nil
+    ) {
+        let filteredItems = (items ?? fetchedMediaItems).filter { mediaItem in
+            let searchText = (searchText ?? self.searchText)
             guard searchText.isEmpty == false else { return true }
             guard let title = mediaItem.title else { return false }
             return title.localizedCaseInsensitiveContains(searchText)
         }
 
+        let sortOption = (sortOption ?? self.sortOption)
         let sortedItems = filteredItems.sorted(by: sortOption.comparator)
 
         mediaItems = sortedItems
