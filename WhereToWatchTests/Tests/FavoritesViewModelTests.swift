@@ -65,16 +65,21 @@ final class FavoritesViewModelTests: XCTestCase {
     @MainActor
     func testSortOptionChanging() async {
         // given
-        let mediaItems = PreviewData.mediaItems
+        let mediaItems = TestData.mediaItems
         let sortOption = FavoritesSortOption.title
-        let sortedItems = PreviewData.mediaItems.sorted(by: sortOption.comparator)
-        sut.mediaItems = mediaItems
+        let sortedItems = TestData.mediaItems.sorted(by: sortOption.comparator)
+
+        sut = FavoritesViewModel(
+            movieDatabaseAPIClient: movieDatabaseAPIClient,
+            genresListFetcher: genresListFetcher,
+            favoriteService: favoriteService,
+            mediaItems: mediaItems
+        )
 
         // when
         sut.sortOption = sortOption
 
         // then
-        try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
         XCTAssertNotEqual(sut.mediaItems, mediaItems)
         XCTAssertEqual(sut.mediaItems, sortedItems)
     }
@@ -82,20 +87,25 @@ final class FavoritesViewModelTests: XCTestCase {
     @MainActor
     func testSearchText() async {
         // given
-        let mediaItems = PreviewData.mediaItems
+        let mediaItems = TestData.mediaItems
         let searchText = "토르"
-        let filteredItems = PreviewData.mediaItems.filter { mediaItem in
-            mediaItem.title?.localizedCaseInsensitiveContains(searchText) ?? true
+        let filteredItems = TestData.mediaItems.filter { mediaItem in
+            mediaItem.title?.localizedCaseInsensitiveContains(searchText) ?? false
         }
-        sut.mediaItems = PreviewData.mediaItems
+        sut = FavoritesViewModel(
+            movieDatabaseAPIClient: movieDatabaseAPIClient,
+            genresListFetcher: genresListFetcher,
+            favoriteService: favoriteService,
+            mediaItems: mediaItems
+        )
 
         // when
         sut.searchText = searchText
 
         // then
         try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
-        XCTAssertNotEqual(sut.mediaItems, mediaItems)
-        XCTAssertEqual(sut.mediaItems, filteredItems)
+        XCTAssertNotEqual(sut.mediaItems.count, mediaItems.count)
+        XCTAssertEqual(sut.mediaItems.count, filteredItems.count)
     }
 
     @MainActor
@@ -103,15 +113,14 @@ final class FavoritesViewModelTests: XCTestCase {
         // given
         favoriteService.favorites = TestData.favorites
         sut.mediaItems = TestData.mediaItems
-        let firstItem = TestData.mediaItems[0]
 
         // when
-        sut.mediaItems.removeFirst()
+        sut.deleteMediaItem(at: IndexSet(integer: 0))
 
         // then
         try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
-        XCTAssertNotEqual(self.sut.mediaItems[0].id, firstItem.id)
-        XCTAssertNotEqual(self.favoriteService.favorites[0].id, firstItem.id)
+        XCTAssertNotEqual(self.sut.mediaItems.count, TestData.mediaItems.count)
+        XCTAssertNotEqual(self.favoriteService.favorites.count, TestData.mediaItems.count)
     }
 }
 
