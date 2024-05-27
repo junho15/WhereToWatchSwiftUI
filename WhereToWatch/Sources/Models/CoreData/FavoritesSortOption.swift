@@ -48,11 +48,11 @@ enum FavoritesSortOption: CaseIterable, CustomStringConvertible {
             )
         case .year:
             return NSLocalizedString(
-                "REGISTRATION_DATE_ORDER_DESCRIPTION", comment: "Registration Date Order Description"
+                "RELEASE_DATE_ORDER", comment: "Release Date Order"
             )
         case .reverseYear:
             return NSLocalizedString(
-                "REGISTRATION_DATE_ORDER_DESCRIPTION", comment: "Registration Date Order Description"
+                "RELEASE_DATE_ORDER_DESCRIPTION", comment: "Release Date Order Description"
             )
         }
     }

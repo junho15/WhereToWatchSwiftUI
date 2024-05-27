@@ -24,7 +24,9 @@
 "REGISTRATION_DATE_ORDER_DESCRIPTION" = "Ascending by Registration";
 "REVERSE_REGISTRATION_DATE_ORDER_DESCRIPTION" = "Descending by Registration";
 "TITLE_ORDER_DESCRIPTION" = "Ascending by Title";
-"REVERSE_TITLE_ORDER_DESCRIPTION" = "Descending by title";
+"REVERSE_TITLE_ORDER_DESCRIPTION" = "Descending by Title";
+"RELEASE_DATE_ORDER" = "Ascending by Release";
+"RELEASE_DATE_ORDER_DESCRIPTION" = "Descending by Release";
 "SORT_OPTION_MENU_TITLE" = "Sort By";
 "TIME_WINDOW_DAY" = "Today";
 "TIME_WINDOW_WEEK" = "This Week";
