@@ -33,7 +33,7 @@ struct CreditItemView: View {
 extension CreditItemView {
     private enum Constants {
         static let spacing = CGFloat(10)
-        static let imageViewRatio = 1/1.3
+        static let imageViewRatio = CGFloat(2)/CGFloat(3)
         static let textLineLimit = 2
         static let textStackHeightRatio = 0.5
     }
