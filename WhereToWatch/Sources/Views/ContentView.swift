@@ -3,7 +3,7 @@ import MovieDatabaseAPI
 
 struct ContentView: View {
     var body: some View {
-        SearchView(searchViewModel: ViewModelProvider.shared.searchViewModel())
+        FavoriteView(favoritesViewModel: ViewModelProvider.shared.favoritesViewModel())
     }
 }
 

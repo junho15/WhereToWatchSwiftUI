@@ -5,17 +5,20 @@ struct MediaItemsListView: View {
     @Binding var selectedMediaItem: MediaItem?
     let enableDelete: Bool
     let onReachEnd: (() -> Void)?
+    let onDelete: ((IndexSet) -> Void)?
 
     init(
         mediaItems: Binding<[MediaItem]>,
         selectedMediaItem: Binding<MediaItem?>,
         enableDelete: Bool,
-        onReachEnd: (() -> Void)? = nil
+        onReachEnd: (() -> Void)? = nil,
+        onDelete: ((IndexSet) -> Void)? = nil
     ) {
         self._mediaItems = mediaItems
         self._selectedMediaItem = selectedMediaItem
         self.enableDelete = enableDelete
         self.onReachEnd = onReachEnd
+        self.onDelete = onDelete
     }
 
     var body: some View {
@@ -33,15 +36,11 @@ struct MediaItemsListView: View {
                         }
                     }
             }
-            .onDelete(perform: enableDelete ? deleteItem : nil)
+            .onDelete(perform: enableDelete ? onDelete : nil)
             .listRowSeparator(.hidden)
             .listRowInsets(Constants.listRowInsets)
         }
         .padding(.top, Constants.topPadding)
-    }
-
-    func deleteItem(at offset: IndexSet) {
-        mediaItems.remove(atOffsets: offset)
     }
 }
 

@@ -64,6 +64,7 @@
 		EBFB94B02BFC668900957895 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94AF2BFC668900957895 /* ServiceLocator.swift */; };
 		EBFB94B22BFC6A5C00957895 /* ViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94B12BFC6A5C00957895 /* ViewModelProvider.swift */; };
 		EBFB94B52BFE113D00957895 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB94B42BFE113D00957895 /* SearchView.swift */; };
+		EBFE893C2C00882F00CB8B67 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE893B2C00882F00CB8B67 /* FavoriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		EBFB94AF2BFC668900957895 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		EBFB94B12BFC6A5C00957895 /* ViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProvider.swift; sourceTree = "<group>"; };
 		EBFB94B42BFE113D00957895 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		EBFE893B2C00882F00CB8B67 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 				EB0A63D72BA9B09400B575E2 /* ContentView.swift */,
 				EBEB9E6E2BE4C91100D0DEBA /* CreditItemViews */,
 				EB38475B2BF5E043009939A6 /* DetailViews */,
+				EBFE893A2C00881700CB8B67 /* FavoriteViews */,
 				EBEB9E6D2BE4C90000D0DEBA /* ImageViews */,
 				EBEB9E6C2BE4C8F100D0DEBA /* MediaItemViews */,
 				EBFB94B32BFE111600957895 /* SearchViews */,
@@ -406,6 +409,14 @@
 				EBFB94B42BFE113D00957895 /* SearchView.swift */,
 			);
 			path = SearchViews;
+			sourceTree = "<group>";
+		};
+		EBFE893A2C00881700CB8B67 /* FavoriteViews */ = {
+			isa = PBXGroup;
+			children = (
+				EBFE893B2C00882F00CB8B67 /* FavoriteView.swift */,
+			);
+			path = FavoriteViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -582,6 +593,7 @@
 				EBEB9E742BE8C0BF00D0DEBA /* SimilarItemsCollectionView.swift in Sources */,
 				EB5830622BC2541D00A05309 /* SimilarViewModel.swift in Sources */,
 				EB58303C2BBE684D00A05309 /* MovieDatabaseAPIError.swift in Sources */,
+				EBFE893C2C00882F00CB8B67 /* FavoriteView.swift in Sources */,
 				EBEB9E5D2BDBB51900D0DEBA /* WatchProviderItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -100,7 +100,7 @@ extension SearchView {
                 mediaItems: mediaItems.wrappedValue,
                 onReachEnd: onReachEnd
             )
-            .padding(Constants.MediaItemsCollectionViewPadding)
+            .padding(Constants.mediaItemsCollectionViewPadding)
             .background(Constants.itemBackgroundStyle)
             .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
             .onChange(of: selectedMediaItem) { _, newMediaItem in
@@ -166,7 +166,7 @@ extension SearchView {
         static let sectionHeaderTextColor = Color.blue
         static let sectionHeaderBottomSpacing = CGFloat(-10)
         static let stackPadding = EdgeInsets(top: .zero, leading: 20, bottom: .zero, trailing: 20)
-        static let MediaItemsCollectionViewPadding = EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        static let mediaItemsCollectionViewPadding = EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         static let cornerRadius = CGFloat(10)
         static let backgroundColor = Color(uiColor: .systemGray6)
         static let itemBackgroundStyle = BackgroundStyle.background
