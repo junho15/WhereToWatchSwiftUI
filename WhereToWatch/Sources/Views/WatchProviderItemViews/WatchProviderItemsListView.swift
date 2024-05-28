@@ -104,6 +104,7 @@ struct WatchProviderItemsListView: View {
 
             if notEmptyItemsCount == .zero {
                 Text("NO_PLACE_MESSAGE")
+                    .foregroundStyle(.gray)
             } else {
                 HStack {
                     Spacer()

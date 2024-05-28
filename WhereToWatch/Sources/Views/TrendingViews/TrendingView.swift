@@ -20,8 +20,8 @@ struct TrendingView: View {
             .pickerStyle(SegmentedPickerStyle())
             .accessibilityIdentifier("TimeWindowPicker")
 
-            mediaSection(title: "MOVIE_TITLE", mediaItems: trendingViewModel.movieMediaItems)
-            mediaSection(title: "TVSHOW_TITLE", mediaItems: trendingViewModel.tvShowMediaItems)
+            mediaSection(title: Constants.trendingMovieTitle, mediaItems: trendingViewModel.movieMediaItems)
+            mediaSection(title: Constants.trendingTVShowTitle, mediaItems: trendingViewModel.tvShowMediaItems)
         }
         .padding(Constants.stackPadding)
         .background(Constants.backgroundColor)
@@ -52,7 +52,7 @@ struct TrendingView: View {
 }
 
 extension TrendingView {
-    private func mediaSection(title: LocalizedStringKey, mediaItems: [MediaItem]) -> some View {
+    private func mediaSection(title: String, mediaItems: [MediaItem]) -> some View {
         Section {
             MediaItemsCollectionView(
                 selectedMediaItem: $selectedMediaItem,
@@ -107,6 +107,14 @@ extension TrendingView {
         static let cornerRadius = CGFloat(10)
         static let backgroundColor = Color(uiColor: .systemGray6)
         static let itemBackgroundStyle = BackgroundStyle.background
+        static let movieTitle = NSLocalizedString("MOVIE_TITLE", comment: "Movie Title")
+        static let tvShowTitle = NSLocalizedString("TVSHOW_TITLE", comment: "TVShow Title")
+        static let trendingMovieTitle = String(
+            format: NSLocalizedString("TRENDING", comment: "Trending (Media)"), movieTitle
+        )
+        static let trendingTVShowTitle = String(
+            format: NSLocalizedString("TRENDING", comment: "Trending (Media)"), tvShowTitle
+        )
     }
 }
 
