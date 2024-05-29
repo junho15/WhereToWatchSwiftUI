@@ -9,84 +9,90 @@ struct FavoriteView: View {
     private let viewModelProvider = ViewModelProvider.shared
 
     var body: some View {
-        VStack(spacing: Constants.spacing) {
-            HStack(alignment: .center) {
-                Picker("Sort by", selection: $favoritesViewModel.sortOption) {
-                    ForEach(FavoritesSortOption.allCases, id: \.self) { option in
-                        Text(option.description).tag(option)
-                    }
+        NavigationStack {
+            VStack(spacing: Constants.spacing) {
+                MediaItemsListView(
+                    mediaItems: $favoritesViewModel.mediaItems,
+                    selectedMediaItem: $selectedMediaItem,
+                    enableDelete: true,
+                    onDelete: favoritesViewModel.deleteMediaItem
+                )
+                .onChange(of: selectedMediaItem) { _, newMediaItem in
+                    guard newMediaItem != nil else { return }
+                    showingDetail = true
                 }
-
-                TextField("SEARCH_BAR_PLACEHOLDER", text: $favoritesViewModel.searchText)
-                    .padding(Constants.searchTextFieldSpacing)
-                    .background(Color(.systemGray5))
-                    .cornerRadius(Constants.cornerRadius)
-                    .keyboardType(.webSearch)
-
-                if !favoritesViewModel.searchText.isEmpty {
-                    Button(
-                        action: {
-                            favoritesViewModel.searchText = ""
-                            UIApplication.shared.sendAction(
-                                #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil
-                            )
-                        },
-                        label: {
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.gray)
-                        }
-                    )
-                }
-            }
-            .padding(Constants.stackPadding)
-            .background(favoritesViewModel.mediaItems.isEmpty == false ? Constants.backgroundColor : .clear)
-
-            MediaItemsListView(
-                mediaItems: $favoritesViewModel.mediaItems,
-                selectedMediaItem: $selectedMediaItem,
-                enableDelete: true,
-                onDelete: favoritesViewModel.deleteMediaItem
-            )
-            .onChange(of: selectedMediaItem) { _, newMediaItem in
-                guard newMediaItem != nil else { return }
-                showingDetail = true
-            }
-            .task {
-                do {
-                    try await favoritesViewModel.fetchFavorites()
-                } catch {
-                    // Handle error
-                }
-            }
-        }
-        .ignoresSafeArea(.keyboard)
-        .sheet(
-            isPresented: $showingDetail,
-            onDismiss: {
-                selectedMediaItem = nil
-                navigationPath = NavigationPath()
-                Task {
+                .task {
                     do {
                         try await favoritesViewModel.fetchFavorites()
                     } catch {
-                        // Handle eror
-                    }
-                }
-            }, content: {
-                NavigationStack(path: $navigationPath) {
-                    if let selectedMediaItem {
-                        mediaItemDetailView(for: selectedMediaItem)
-                            .navigationDestination(for: MediaItem.self) { mediaItem in
-                                mediaItemDetailView(for: mediaItem)
-                            }
+                        // Handle error
                     }
                 }
             }
-        )
-        .onTapGesture {
-            UIApplication.shared.sendAction(
-                #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil
+            .ignoresSafeArea(.keyboard)
+            .sheet(
+                isPresented: $showingDetail,
+                onDismiss: {
+                    selectedMediaItem = nil
+                    navigationPath = NavigationPath()
+                    Task {
+                        do {
+                            try await favoritesViewModel.fetchFavorites()
+                        } catch {
+                            // Handle error
+                        }
+                    }
+                }, content: {
+                    NavigationStack(path: $navigationPath) {
+                        if let selectedMediaItem {
+                            mediaItemDetailView(for: selectedMediaItem)
+                                .navigationDestination(for: MediaItem.self) { mediaItem in
+                                    mediaItemDetailView(for: mediaItem)
+                                }
+                        }
+                    }
+                }
             )
+            .onTapGesture {
+                UIApplication.shared.sendAction(
+                    #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil
+                )
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Picker("Sort by", selection: $favoritesViewModel.sortOption) {
+                        ForEach(FavoritesSortOption.allCases, id: \.self) { option in
+                            Text(option.description).tag(option)
+                        }
+                    }
+                }
+
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        TextField("SEARCH_BAR_PLACEHOLDER", text: $favoritesViewModel.searchText)
+                            .padding(Constants.searchTextFieldSpacing)
+                            .background(Color(.systemGray5))
+                            .cornerRadius(Constants.cornerRadius)
+                            .keyboardType(.webSearch)
+
+                        if !favoritesViewModel.searchText.isEmpty {
+                            Button(
+                                action: {
+                                    favoritesViewModel.searchText = ""
+                                    UIApplication.shared.sendAction(
+                                        #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil
+                                    )
+                                },
+                                label: {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(.gray)
+                                }
+                            )
+                        }
+                    }
+                    .padding(Constants.stackPadding)
+                }
+            }
         }
     }
 }
@@ -112,8 +118,8 @@ extension FavoriteView {
 extension FavoriteView {
     private enum Constants {
         static let spacing = CGFloat(20)
-        static let searchTextFieldSpacing = CGFloat(10)
-        static let stackPadding = EdgeInsets(top: 10, leading: 10, bottom: 20, trailing: 10)
+        static let searchTextFieldSpacing = CGFloat(7)
+        static let stackPadding = EdgeInsets(top: 10, leading: 0, bottom: 15, trailing: 0)
         static let cornerRadius = CGFloat(10)
         static let backgroundColor = Color(uiColor: .systemGray6)
     }
