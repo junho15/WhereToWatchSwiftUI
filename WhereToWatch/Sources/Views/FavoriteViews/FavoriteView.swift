@@ -60,10 +60,22 @@ struct FavoriteView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Picker("Sort by", selection: $favoritesViewModel.sortOption) {
-                        ForEach(FavoritesSortOption.allCases, id: \.self) { option in
-                            Text(option.description).tag(option)
+                    Menu {
+                        ForEach(FavoritesSortOption.allCases, id: \.self) { sortOption in
+                            Button {
+                                favoritesViewModel.sortOption = sortOption
+                            } label: {
+                                Label {
+                                    Text(sortOption.description)
+                                } icon: {
+                                    if favoritesViewModel.sortOption == sortOption {
+                                        Image(systemName: "checkmark")
+                                    }
+                                }
+                            }
                         }
+                    } label: {
+                        Label("SORT_OPTION_MENU_TITLE", systemImage: "list.number")
                     }
                 }
 
