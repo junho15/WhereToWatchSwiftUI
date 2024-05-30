@@ -33,3 +33,7 @@
 "VIEW_ALL" = "View All";
 "NO_RESULTS" = "No Results";
 "NO_FAVORITE_MEDIA" = "No Favorite movies, TV shows";
+"DARK_APPEARANCE_OPTION" = "Appearance";
+"DARK_APPEARANCE_OPTION_SYSTEM" = "System";
+"DARK_APPEARANCE_OPTION_LIGHT" = "Light";
+"DARK_APPEARANCE_OPTION_DARK" = "Dark";
