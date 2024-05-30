@@ -20,6 +20,7 @@
 "TRENDING_TAB_TITLE" = "Trending";
 "SEARCH_TAB_TITLE" = "Search";
 "FAVORITE_TAB_TITLE" = "Favorite";
+"SETTINGS_TAB_TITLE" = "Settings";
 "DELETE_ACTION_TITLE" = "Delete";
 "REGISTRATION_DATE_ORDER_DESCRIPTION" = "Ascending by Registration";
 "REVERSE_REGISTRATION_DATE_ORDER_DESCRIPTION" = "Descending by Registration";

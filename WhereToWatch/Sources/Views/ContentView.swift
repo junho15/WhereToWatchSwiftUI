@@ -21,6 +21,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("FAVORITE_TAB_TITLE", systemImage: "star.circle")
                 }
+
+            SettingsView()
+                .tabItem {
+                    Label("SETTINGS_TAB_TITLE", systemImage: "gear.circle.fill")
+                }
         }
     }
 }
