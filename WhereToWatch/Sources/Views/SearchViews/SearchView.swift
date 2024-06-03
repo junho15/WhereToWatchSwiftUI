@@ -11,29 +11,6 @@ struct SearchView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: Constants.spacing) {
-                HStack {
-                    TextField("SEARCH_BAR_PLACEHOLDER", text: $searchViewModel.searchText)
-                        .padding(Constants.searchTextFieldSpacing)
-                        .background(Color(.systemGray5))
-                        .cornerRadius(Constants.cornerRadius)
-                        .keyboardType(.asciiCapable)
-
-                    if !searchViewModel.searchText.isEmpty {
-                        Button(
-                            action: {
-                                searchViewModel.searchText = ""
-                                UIApplication.shared.sendAction(
-                                    #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil
-                                )
-                            },
-                            label: {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(.gray)
-                            }
-                        )
-                    }
-                }
-
                 mediaSection(
                     title: "MOVIE_TITLE", mediaItems:
                         $searchViewModel.movieMediaItems,
@@ -62,8 +39,36 @@ struct SearchView: View {
                     }
                 }
             }
+            .toolbarTitleDisplayMode(.inlineLarge)
             .padding(Constants.stackPadding)
             .background(Constants.backgroundColor)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        TextField("SEARCH_BAR_PLACEHOLDER", text: $searchViewModel.searchText)
+                            .padding(Constants.searchTextFieldSpacing)
+                            .background(Color(.systemGray5))
+                            .cornerRadius(Constants.cornerRadius)
+                            .keyboardType(.asciiCapable)
+
+                        if !searchViewModel.searchText.isEmpty {
+                            Button(
+                                action: {
+                                    searchViewModel.searchText = ""
+                                    UIApplication.shared.sendAction(
+                                        #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil
+                                    )
+                                },
+                                label: {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(.gray)
+                                }
+                            )
+                        }
+                    }
+                    .padding(Constants.searchBarStackPadding)
+                }
+            }
             .sheet(
                 isPresented: $showingDetail,
                 onDismiss: {
@@ -165,6 +170,7 @@ extension SearchView {
         static let sectionHeaderFont = Font.headline
         static let sectionHeaderTextColor = Color.blue
         static let sectionHeaderBottomSpacing = CGFloat(-10)
+        static let searchBarStackPadding = EdgeInsets(top: 10, leading: 0, bottom: 15, trailing: 0)
         static let stackPadding = EdgeInsets(top: .zero, leading: 20, bottom: .zero, trailing: 20)
         static let mediaItemsCollectionViewPadding = EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         static let cornerRadius = CGFloat(10)

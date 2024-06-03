@@ -10,44 +10,50 @@ struct TrendingView: View {
     private let viewModelProvider = ViewModelProvider.shared
 
     var body: some View {
-        VStack(spacing: Constants.spacing) {
-            Picker("TimeWindow", selection: $trendingViewModel.selectedTimeWindowIndex) {
-                ForEach(0..<2) { index in
-                    Text(segments[index]).tag(index)
+        NavigationStack {
+            VStack(spacing: Constants.spacing) {
+                mediaSection(title: Constants.trendingMovieTitle, mediaItems: trendingViewModel.movieMediaItems)
+                mediaSection(title: Constants.trendingTVShowTitle, mediaItems: trendingViewModel.tvShowMediaItems)
+            }
+            .padding(Constants.stackPadding)
+            .background(Constants.backgroundColor)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Picker("TimeWindow", selection: $trendingViewModel.selectedTimeWindowIndex) {
+                        ForEach(0..<2) { index in
+                            Text(segments[index]).tag(index)
+                        }
+                    }
+                    .frame(maxWidth: Constants.pickerMaxWidth)
+                    .pickerStyle(SegmentedPickerStyle())
+                    .accessibilityIdentifier("TimeWindowPicker")
                 }
             }
-            .frame(maxWidth: Constants.pickerMaxWidth)
-            .pickerStyle(SegmentedPickerStyle())
-            .accessibilityIdentifier("TimeWindowPicker")
-
-            mediaSection(title: Constants.trendingMovieTitle, mediaItems: trendingViewModel.movieMediaItems)
-            mediaSection(title: Constants.trendingTVShowTitle, mediaItems: trendingViewModel.tvShowMediaItems)
-        }
-        .padding(Constants.stackPadding)
-        .background(Constants.backgroundColor)
-        .task {
-            do {
-                try await trendingViewModel.fetchTrendingMediaItems()
-            } catch {
-                // Handle error
+            .toolbarTitleDisplayMode(.inlineLarge)
+            .task {
+                do {
+                    try await trendingViewModel.fetchTrendingMediaItems()
+                } catch {
+                    // Handle error
+                }
             }
-        }
-        .sheet(
-            isPresented: $showingDetail,
-            onDismiss: {
-                selectedMediaItem = nil
-                navigationPath = NavigationPath()
-            }, content: {
-                NavigationStack(path: $navigationPath) {
-                    if let selectedMediaItem {
-                        mediaItemDetailView(for: selectedMediaItem)
-                            .navigationDestination(for: MediaItem.self) { mediaItem in
-                                mediaItemDetailView(for: mediaItem)
-                            }
+            .sheet(
+                isPresented: $showingDetail,
+                onDismiss: {
+                    selectedMediaItem = nil
+                    navigationPath = NavigationPath()
+                }, content: {
+                    NavigationStack(path: $navigationPath) {
+                        if let selectedMediaItem {
+                            mediaItemDetailView(for: selectedMediaItem)
+                                .navigationDestination(for: MediaItem.self) { mediaItem in
+                                    mediaItemDetailView(for: mediaItem)
+                                }
+                        }
                     }
                 }
-            }
         )
+        }
     }
 }
 

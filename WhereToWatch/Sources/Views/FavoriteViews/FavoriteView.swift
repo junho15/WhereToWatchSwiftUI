@@ -102,7 +102,7 @@ struct FavoriteView: View {
                             )
                         }
                     }
-                    .padding(Constants.stackPadding)
+                    .padding(Constants.searchBarStackPadding)
                 }
             }
         }
@@ -131,7 +131,7 @@ extension FavoriteView {
     private enum Constants {
         static let spacing = CGFloat(20)
         static let searchTextFieldSpacing = CGFloat(7)
-        static let stackPadding = EdgeInsets(top: 10, leading: 0, bottom: 15, trailing: 0)
+        static let searchBarStackPadding = EdgeInsets(top: 10, leading: 0, bottom: 15, trailing: 0)
         static let cornerRadius = CGFloat(10)
         static let backgroundColor = Color(uiColor: .systemGray6)
     }
