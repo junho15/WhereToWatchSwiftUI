@@ -59,28 +59,26 @@ struct FavoriteView: View {
                 )
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Menu {
-                        ForEach(FavoritesSortOption.allCases, id: \.self) { sortOption in
-                            Button {
-                                favoritesViewModel.sortOption = sortOption
-                            } label: {
-                                Label {
-                                    Text(sortOption.description)
-                                } icon: {
-                                    if favoritesViewModel.sortOption == sortOption {
-                                        Image(systemName: "checkmark")
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Menu {
+                            ForEach(FavoritesSortOption.allCases, id: \.self) { sortOption in
+                                Button {
+                                    favoritesViewModel.sortOption = sortOption
+                                } label: {
+                                    Label {
+                                        Text(sortOption.description)
+                                    } icon: {
+                                        if favoritesViewModel.sortOption == sortOption {
+                                            Image(systemName: "checkmark")
+                                        }
                                     }
                                 }
                             }
+                        } label: {
+                            Label("SORT_OPTION_MENU_TITLE", systemImage: "list.number")
                         }
-                    } label: {
-                        Label("SORT_OPTION_MENU_TITLE", systemImage: "list.number")
-                    }
-                }
 
-                ToolbarItem(placement: .principal) {
-                    HStack {
                         TextField("SEARCH_BAR_PLACEHOLDER", text: $favoritesViewModel.searchText)
                             .padding(Constants.searchTextFieldSpacing)
                             .background(Color(.systemGray5))

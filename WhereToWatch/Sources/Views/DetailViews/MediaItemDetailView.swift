@@ -64,6 +64,7 @@ struct MediaItemDetailView: View {
                     }
                 )
             }
+
             ToolbarItem(placement: .topBarTrailing) {
                 Button(
                     action: {

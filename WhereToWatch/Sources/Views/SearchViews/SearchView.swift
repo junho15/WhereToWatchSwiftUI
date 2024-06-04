@@ -117,6 +117,7 @@ extension SearchView {
                 Text("\(NSLocalizedString(title, comment: "Header Title")) (\(totalCount))")
                     .font(Constants.sectionHeaderFont)
                     .foregroundStyle(Constants.sectionHeaderTextColor)
+
                 Spacer()
 
                 if mediaItems.isEmpty == false {

@@ -76,6 +76,7 @@ extension TrendingView {
                 Text(title)
                     .font(Constants.sectionHeaderFont)
                     .foregroundStyle(Constants.sectionHeaderTextColor)
+
                 Spacer()
             }
             .padding(.leading, Constants.sectionHeaderTextLeadingPadding)

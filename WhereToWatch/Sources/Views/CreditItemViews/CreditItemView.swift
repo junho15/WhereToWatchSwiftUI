@@ -7,8 +7,10 @@ struct CreditItemView: View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
+
                 AsyncImageView(url: creditItem.profileURL)
                     .aspectRatio(Constants.imageViewRatio, contentMode: .fit)
+
                 Spacer()
 
                 VStack(spacing: Constants.spacing) {
