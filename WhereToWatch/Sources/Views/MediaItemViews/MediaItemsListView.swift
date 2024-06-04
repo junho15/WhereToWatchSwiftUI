@@ -40,7 +40,7 @@ struct MediaItemsListView: View {
             .listRowSeparator(.hidden)
             .listRowInsets(Constants.listRowInsets)
         }
-        .padding(.top, Constants.topPadding)
+        .toolbarTitleDisplayMode(.inlineLarge)
     }
 }
 
@@ -48,7 +48,6 @@ extension MediaItemsListView {
     private enum Constants {
         static let maxHeight = CGFloat(150)
         static let listRowInsets = EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-        static let topPadding = CGFloat(-25)
     }
 }
 
