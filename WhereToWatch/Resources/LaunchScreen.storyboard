@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0zF-zD-gVW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TheMovieDB" translatesAutoresizingMaskIntoConstraints="NO" id="OMz-4I-qum">
+                                <rect key="frame" x="20" y="755.33333333333337" width="353" height="42.666666666666629"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="w8j-LQ-m4W">
+                                <rect key="frame" x="0.0" y="59" width="393" height="696.33333333333337"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xFU-zS-mlW"/>
+                        <color key="backgroundColor" name="MainColor"/>
+                        <constraints>
+                            <constraint firstItem="OMz-4I-qum" firstAttribute="height" secondItem="0zF-zD-gVW" secondAttribute="height" multiplier="0.05" id="AG1-w7-HBZ"/>
+                            <constraint firstAttribute="trailing" secondItem="OMz-4I-qum" secondAttribute="trailing" constant="20" id="CLZ-si-wli"/>
+                            <constraint firstItem="w8j-LQ-m4W" firstAttribute="leading" secondItem="xFU-zS-mlW" secondAttribute="leading" id="MCB-nO-TrF"/>
+                            <constraint firstItem="OMz-4I-qum" firstAttribute="leading" secondItem="0zF-zD-gVW" secondAttribute="leading" constant="20" id="PQB-7P-XM8"/>
+                            <constraint firstItem="w8j-LQ-m4W" firstAttribute="top" secondItem="xFU-zS-mlW" secondAttribute="top" id="SPE-FG-IB8"/>
+                            <constraint firstItem="xFU-zS-mlW" firstAttribute="trailing" secondItem="w8j-LQ-m4W" secondAttribute="trailing" id="g8O-CU-GM9"/>
+                            <constraint firstItem="xFU-zS-mlW" firstAttribute="bottom" secondItem="OMz-4I-qum" secondAttribute="bottom" constant="20" id="gt3-4z-e7C"/>
+                            <constraint firstItem="OMz-4I-qum" firstAttribute="top" secondItem="w8j-LQ-m4W" secondAttribute="bottom" id="zvA-8O-iL3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="256" height="256"/>
+        <image name="TheMovieDB" width="423.04000854492188" height="35.400001525878906"/>
+        <namedColor name="MainColor">
+            <color red="0.050980392156862744" green="0.14509803921568629" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
