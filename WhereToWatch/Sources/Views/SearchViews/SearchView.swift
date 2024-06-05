@@ -49,7 +49,7 @@ struct SearchView: View {
                             .padding(Constants.searchTextFieldSpacing)
                             .background(Color(.systemGray5))
                             .cornerRadius(Constants.cornerRadius)
-                            .keyboardType(.asciiCapable)
+                            .keyboardType(.webSearch)
 
                         if !searchViewModel.searchText.isEmpty {
                             Button(
